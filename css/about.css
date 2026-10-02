@@ -1,0 +1,31 @@
+/* ==========================================================================
+   About page
+   ========================================================================== */
+
+.about-text { max-width: 640px; margin-top: 36px; }
+.about-text .blk-text p { font-size: 19px; line-height: 1.55; }
+.mini-h { margin: 34px 0 12px; color: var(--muted); font: 700 11px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; }
+
+.contact { margin-top: 64px; }
+.contact-list { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
+.contact-list li { border-bottom: 2px solid var(--ink); }
+.contact-row {
+  all: unset;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 8px;
+  cursor: var(--cur-hand, pointer);
+  text-decoration: none;
+  position: relative;
+  isolation: isolate;
+}
+.contact-row strong { font-size: clamp(30px, 5.5vw, 54px); font-weight: 800; font-stretch: 85%; line-height: 1; letter-spacing: -.045em; }
+.contact-val { display: flex; align-items: center; gap: 12px; text-align: right; }
+.contact-row .arr { font-size: 26px; }
+.contact-row:hover .arr { transform: translateX(4px) rotate(-45deg); }
+
+

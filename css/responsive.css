@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 1080px) {
+  .hud { display: none; }
+}
+
+@media (max-width: 860px) {
+  :root { --pad-x: 36px; }
+  .case-body { grid-template-columns: minmax(0, 1fr); }
+  .toc { display: none; }
+  .gcard-bignum { font-size: 70px; }
+}
+
+@media (max-width: 720px) {
+  :root { --gap-y: 10px; --radius: 22px; }
+  body { font-size: 16px; }
+  .vid-btn, .media--hero .vid-btn { width: 64px; height: 64px; }
+  .vid-btn svg, .media--hero .vid-btn svg { width: 28px; height: 28px; }
+  .vid-tag { top: 14px; left: 14px; max-width: calc(100% - 28px); }
+  .vid-time { bottom: 14px; right: 14px; }
+  .vid-cover .bk { display: none; }
+
+  .frame {
+    top: max(10px, env(safe-area-inset-top));
+    bottom: max(10px, env(safe-area-inset-bottom));
+    width: calc(100% - 20px);
+  }
+  .frame-tab, .mark { display: none; }
+
+  /* Nav moves to the bottom as a thumb-friendly tab bar */
+  .nav { order: 2; padding: 8px; border-bottom: 0; border-top: var(--bw) solid var(--ink); }
+  /* ...so the rounded corners are now at the top of the stage, not the bottom */
+  .stage { --sbar-top: calc(var(--radius) - var(--bw)); --sbar-bottom: 10px; }
+  .brand { display: none; }
+  .nav-left { flex: none; }
+  .nav-back { width: 46px; height: 46px; padding: 0; justify-content: center; }
+  .nav-back-t { display: none; }
+  .tabs { flex: 1; }
+  .tab { flex: 1; padding: 11px 6px; text-align: center; }
+  .progress { top: calc(var(--bw) * -1); bottom: auto; }
+
+  :root { --pad-x: 20px; }
+  .page { padding-top: 32px; }
+
+  .hero-intro, .how-lede, .page-lede { font-size: 17px; }
+  .marquee-item { font-size: 22px; }
+
+  .section-head { flex-direction: column; align-items: flex-start; }
+  .section-head p { text-align: left; }
+
+  .gcard { position: relative; top: auto; }
+  .gcard-a { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+  .gcard-media { padding: 22px 22px 24px 18px; border-right: 0; border-bottom: var(--bw) solid var(--ink); }
+  .gcard-title { font-size: 30px; }
+  .gcard-bignum { font-size: 64px; }
+
+  /* Case-study tags: one per row, number then value */
+  .spec { display: flex; flex-direction: column; }
+  .spec > div { display: flex; align-items: baseline; gap: 14px; padding: 10px 16px; box-shadow: none; }
+  .spec > div + div { border-top: 2px solid var(--ink); }
+  .spec dt { flex: none; }
+  .spec dd { margin: 0; }
+
+  .gallery { --cols: 2 !important; }
+  .keys { grid-template-columns: minmax(0, 1fr); }
+  .loop-step { grid-template-columns: 40px minmax(0, 1fr); gap: 12px; }
+  .loop-step::before { left: 19px; top: 20px; bottom: -20px; }
+  .loop-n { width: 40px; height: 40px; font-size: 13px; }
+  .loop-card { padding: 18px 16px 20px; }
+  .loop-card h3 { font-size: 22px; }
+  .how { margin-top: 64px; }
+  .steps li { margin-left: calc(var(--k) * 10px); grid-template-columns: 44px 1fr; gap: 14px; padding: 14px; }
+  .steps li::before { width: 44px; height: 44px; font-size: 22px; }
+
+  .next { padding-right: 80px; }
+  .next .arrow { right: 20px; font-size: 44px; }
+
+  .row-head { grid-template-columns: 30px minmax(0, 1fr) 34px; gap: 12px; }
+  .row-tag { display: none; }
+  .row-title { font-size: 20px; }
+  .row-body { padding-left: 8px; }
+
+  .contact-val .mono { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+  .ch { transform: none; }
+  .shutter { display: none; }
+}

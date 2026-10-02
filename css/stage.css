@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Stage, scroller, shutter transition
+   ========================================================================== */
+
+.stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  /* Custom scrollbar track ends. The bottom of the stage meets the frame's
+     rounded corner, so the track stops where the straight edge ends
+     (inner corner radius = --radius minus the border). */
+  --sbar-top: 10px;
+  --sbar-bottom: calc(var(--radius) - var(--bw));
+}
+
+/* Native scrollbar hidden; the custom one below replaces it */
+.scroller {
+  position: absolute;
+  inset: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: none;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+}
+.scroller::-webkit-scrollbar { display: none; }
+
+.sbar {
+  position: absolute;
+  z-index: 7;                      /* under the page-transition shutter */
+  top: var(--sbar-top);
+  bottom: var(--sbar-bottom);
+  right: 4px;
+  width: 12px;
+}
+.sbar.is-off { display: none; }
+.sbar-thumb {
+  position: absolute;
+  top: 0;
+  left: 3px;
+  right: 3px;
+  min-height: 40px;
+  background: var(--ink);
+  border-radius: 999px;
+  cursor: var(--cur-hand, pointer);
+  transition: left .2s var(--out), right .2s var(--out), background-color .2s;
+  touch-action: none;
+}
+/* Widen on hover / while dragging so it's easy to grab */
+.sbar:hover .sbar-thumb,
+.sbar.is-drag .sbar-thumb { left: 1px; right: 1px; }
+.sbar.is-drag .sbar-thumb { background: var(--muted); }
+
+.shutter {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  pointer-events: none;
+}
+.shutter .bar {
+  background: var(--accent);
+  margin-right: -1px;
+  transform: scaleY(0);
+  transform-origin: 50% 100%;
+}
+.shutter.is-initial .bar { transform: scaleY(1); }
+.shutter-label {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 0 24px;
+  text-align: center;
+  font-size: clamp(40px, 9vw, 104px);
+  font-weight: 800;
+  font-stretch: 80%;
+  line-height: .9;
+  letter-spacing: -.03em;
+  text-transform: uppercase;
+  color: var(--on-accent);
+  opacity: 0;
+}
+

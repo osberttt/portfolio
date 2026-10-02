@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- Seamless 64px tile: faint grid lines on the tile edges + a "+" in the
+       middle of every square. (The lane brush snaps to the line crossings,
+       so the marks and the points never sit on top of each other.)
+       Used by the side lanes and the screenshot viewer. Swap for your own texture. -->
+  <rect x="0" y="0" width="64" height="1" fill="#ffffff" fill-opacity="0.05"/>
+  <rect x="0" y="0" width="1" height="64" fill="#ffffff" fill-opacity="0.05"/>
+  <!-- Centred on 32.5, halfway between this tile's line (0.5) and the next one (64.5).
+       One path so the overlap in the middle doesn't stack its opacity -->
+  <!-- pluses hidden for now: <path fill="#ffffff" fill-opacity="0.13" d="M28 31h9v3h-9z M31 28h3v9h-3z"/> -->
+</svg>

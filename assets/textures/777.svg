@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <!-- 777: slot symbols (diamond, star, heart, chip). Seamless 40px tile; ink at low opacity so it tints with the card accent. Keep size in sync with texture.size in the game's data file. -->
+  <g fill="#12161f" fill-opacity="0.06">
+    <polygon points="10,4 15,10 10,16 5,10"/>
+    <polygon points="30,4 31.47,7.98 35.71,8.15 32.38,10.77 33.53,14.85 30,12.5 26.47,14.85 27.62,10.77 24.29,8.15 28.53,7.98"/>
+    <path d="M10 35C4 31 3 27 6 25.5C8 24.5 9.5 25.5 10 27C10.5 25.5 12 24.5 14 25.5C17 27 16 31 10 35Z"/>
+    <circle cx="30" cy="30" r="2"/>
+  </g>
+  <circle cx="30" cy="30" r="5" fill="none" stroke="#12161f" stroke-opacity="0.06" stroke-width="1.5"/>
+</svg>

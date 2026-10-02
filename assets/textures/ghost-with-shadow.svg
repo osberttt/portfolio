@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- Ghost with Shadow: a ghost and its lighter, offset shadow. Seamless 32px tile; ink at low opacity so it tints with the card accent. Keep size in sync with texture.size in the game's data file. -->
+  <g fill="#12161f">
+    <path fill-opacity="0.06" transform="translate(3 3)" d="M0 14V6a6 6 0 0 1 12 0v8l-2-2-2 2-2-2-2 2-2-2Z"/>
+    <path fill-opacity="0.03" transform="translate(18 16)" d="M0 14V6a6 6 0 0 1 12 0v8l-2-2-2 2-2-2-2 2-2-2Z"/>
+  </g>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="32" viewBox="0 0 44 32">
+  <!-- Bloody Wasted: bats. Seamless 44x32 tile; ink at low opacity so it tints with the card accent. Keep size in sync with texture.size ([44, 32]) in the game's data file. -->
+  <g fill="#12161f" fill-opacity="0.06">
+    <path id="bat" transform="translate(2 3)" d="M0 2C3 1 6 2 8 4L8 1L9.2 3L10.8 3L12 1L12 4C14 2 17 1 20 2C19 5 17 7 14.5 6.5C13.5 8 11.5 8.5 10.5 9.5L10 10L9.5 9.5C8.5 8.5 6.5 8 5.5 6.5C3 7 1 5 0 2Z"/>
+    <path transform="translate(22 18)" d="M0 2C3 1 6 2 8 4L8 1L9.2 3L10.8 3L12 1L12 4C14 2 17 1 20 2C19 5 17 7 14.5 6.5C13.5 8 11.5 8.5 10.5 9.5L10 10L9.5 9.5C8.5 8.5 6.5 8 5.5 6.5C3 7 1 5 0 2Z"/>
+  </g>
+</svg>

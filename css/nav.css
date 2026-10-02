@@ -1,0 +1,96 @@
+/* ==========================================================================
+   Nav
+   ========================================================================== */
+
+.nav {
+  position: relative;
+  z-index: 6;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px var(--pad-x, 64px);
+  background: var(--paper);
+  border-bottom: var(--bw) solid var(--ink);
+}
+
+/* Left side: Back (hidden on Home when there's nowhere to go back to) + name */
+.nav-left { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.nav-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 38px;
+  padding: 0 14px 0 11px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  font: 700 11px/1 var(--mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  transition: background-color .25s, color .25s;
+}
+.nav-back-arr { font-size: 16px; transition: transform .45s var(--spring); }
+.nav-back:hover { background: var(--ink); color: var(--paper); }
+.nav-back:hover .nav-back-arr { transform: translateX(-4px); }
+
+.brand { display: flex; align-items: center; gap: 10px; margin-left: -4px; text-decoration: none; }
+.brand-name {
+  padding: 4px;
+  font-size: 24px;
+  font-weight: 800;
+  font-stretch: 85%;
+  line-height: 1;
+  letter-spacing: -.035em;
+  transition: transform .5s var(--spring);
+}
+.brand:hover .brand-name { transform: rotate(-4deg); }
+
+.pill-group {
+  position: relative;
+  display: flex;
+  padding: 4px;
+  background: var(--paper-2);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+}
+.pill-ind {
+  position: absolute;
+  top: 4px; bottom: 4px; left: 0;
+  width: 0;
+  background: var(--ink);
+  border-radius: 999px;
+  transition: transform .55s var(--ease), width .55s var(--ease);
+}
+
+.tab {
+  position: relative;
+  z-index: 1;
+  padding: 8px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 650;
+  font-size: 15px;
+  transition: color .45s var(--ease);
+}
+.tab.active { color: var(--paper); }
+
+/* Rolling text on hover */
+.roll { display: inline-block; height: 1.25em; line-height: 1.25; overflow: hidden; vertical-align: top; }
+.roll i { display: block; font-style: normal; transition: transform .45s var(--ease); }
+.roll i::after { content: attr(data-t); display: block; }
+.tab:hover .roll i { transform: translateY(-50%); }
+
+.progress {
+  position: absolute;
+  left: 0;
+  bottom: calc(var(--bw) * -1);
+  width: 100%;
+  height: var(--bw);
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: background-color .6s;
+}
+

@@ -1,0 +1,98 @@
+/* ==========================================================================
+   Lightbox (screenshot viewer)
+   ========================================================================== */
+
+/* Same textured backdrop as the lanes, so it still feels like part of the site */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 20px;
+  padding: 20px clamp(16px, 5vw, 72px) clamp(20px, 5vh, 48px);
+  background-color: var(--lane);
+  background-image: url("../assets/texture.svg");
+  background-size: var(--tile) var(--tile);
+  color: var(--paper);
+  outline: none;
+}
+
+.lb-bar { display: flex; align-items: center; gap: 16px; }
+.lb-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px 10px 13px;
+  background: var(--paper);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  box-shadow: 4px 4px 0 var(--accent);
+  font: 700 12px/1 var(--mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  transition: transform .2s var(--out), box-shadow .2s var(--out);
+}
+.lb-back span { font-size: 16px; transition: transform .4s var(--spring); }
+.lb-back:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--accent); }
+.lb-back:hover span { transform: translateX(-4px); }
+.lb-back:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--accent); }
+.lb-back:focus { outline: none; }
+.lb-back:focus-visible { outline: 3px solid var(--paper); outline-offset: 4px; }
+.lb-count { font: 600 12px/1 var(--mono); letter-spacing: .1em; opacity: .7; }
+.lb-hint { margin-left: auto; font: 600 11px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; opacity: .45; }
+
+/* Image fits the space left under the bar, caption right under the image, both centered */
+.lb-fig {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 0;
+  margin: 0;
+}
+.lb-fig img {
+  min-height: 0;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  background: var(--paper);
+  border: var(--bw) solid var(--paper);
+  border-radius: 16px;
+  box-shadow: 8px 8px 0 var(--accent);
+}
+/* Sits on a plain patch of the backdrop colour so the grid marks don't run through the text */
+.lb-cap { max-width: 72ch; padding: 6px 12px; background: var(--lane); border-radius: 8px; color: rgba(237, 241, 238, .82); font: 500 13px/1.5 var(--mono); text-align: center; }
+
+/* Prev / next: only when the page has more than one screenshot */
+.lb-nav {
+  position: absolute;
+  top: 50%;
+  display: none;
+  place-items: center;
+  width: 52px; height: 52px;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  box-shadow: 4px 4px 0 var(--accent);
+  font-size: 22px;
+  font-weight: 800;
+  translate: 0 -50%;
+  transition: transform .4s var(--spring);
+}
+.lightbox.is-multi { padding-inline: clamp(76px, 8vw, 120px); }
+.lightbox.is-multi .lb-nav { display: grid; }
+.lb-prev { left: clamp(8px, 1.5vw, 20px); }
+.lb-next { right: clamp(8px, 1.5vw, 20px); }
+.lb-prev:hover { transform: translateX(-4px); }
+.lb-next:hover { transform: translateX(4px); }
+
+@media (max-width: 720px) {
+  .lightbox, .lightbox.is-multi { padding: 14px 12px 76px; }
+  .lb-hint { display: none; }
+  .lb-nav { top: auto; bottom: 16px; width: 44px; height: 44px; translate: none; }
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+  <!-- Seamless 14px diagonal-hatch tile for the Home card's colored panel.
+       Ink at low opacity, so it tints with whatever accent sits underneath.
+       The two short corner strokes make the diagonal continuous across tile edges.
+       Keep in sync with background-size in css/home.css (.gcard-media). -->
+  <g stroke="#12161f" stroke-opacity="0.05" stroke-width="1.6" stroke-linecap="square">
+    <path d="M0 14L14 0"/>
+    <path d="M-3.5 3.5L3.5 -3.5"/>
+    <path d="M10.5 17.5L17.5 10.5"/>
+  </g>
+</svg>

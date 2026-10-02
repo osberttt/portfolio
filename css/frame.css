@@ -1,0 +1,66 @@
+/* ==========================================================================
+   The frame (middle lane)
+   ========================================================================== */
+
+.frame {
+  position: fixed;
+  top: var(--gap-y);
+  bottom: var(--gap-y);
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: min(var(--frame-w), calc(100% - 32px));
+  z-index: 2;
+  background: var(--paper);
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: calc(var(--sx) * 1px) calc(var(--sy) * 1px) 0 0 var(--shadow-c);
+}
+
+.frame-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: calc(var(--radius) - var(--bw));
+  background: var(--paper);
+}
+
+/* Folder tab sticking out of the top edge */
+.frame-tab {
+  position: absolute;
+  bottom: calc(100% + var(--bw));
+  left: 34px;
+  height: 30px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: var(--on-accent);
+  border: var(--bw) solid var(--ink);
+  border-bottom: 0;
+  border-radius: 12px 12px 0 0;
+  font: 700 11px/1 var(--mono);
+  letter-spacing: .1em;
+  text-transform: lowercase;
+  transition: background-color .6s;
+}
+.frame-tab.is-status { background: var(--ink); color: var(--shadow-c); }
+.frame-tab.is-status .frame-tab-dot { background: var(--shadow-c); animation: none; }
+.frame-tab-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--on-accent);
+  animation: blink 1.4s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Print crop marks at the corners */
+.mark { position: absolute; width: 14px; height: 14px; border: 0 solid #fff; opacity: .35; pointer-events: none; }
+.mark.tl { top: -24px; left: -24px; border-top-width: 2px; border-left-width: 2px; }
+.mark.tr { top: -24px; right: -24px; border-top-width: 2px; border-right-width: 2px; }
+.mark.bl { bottom: -24px; left: -24px; border-bottom-width: 2px; border-left-width: 2px; }
+.mark.br { bottom: -24px; right: -24px; border-bottom-width: 2px; border-right-width: 2px; }
+

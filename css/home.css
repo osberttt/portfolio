@@ -1,0 +1,386 @@
+/* ==========================================================================
+   Home
+   ========================================================================== */
+
+.hero { position: relative; padding-bottom: 44px; }
+
+.hero-title {
+  margin: 0;
+  font-size: clamp(64px, 12.5vw, 150px);
+  font-weight: 800;
+  font-stretch: 78%;
+  line-height: .84;
+  letter-spacing: -.04em;
+}
+.hero-title .word { display: block; width: fit-content; }
+
+.hero-sub {
+  margin: 18px 0 0;
+  font-size: clamp(28px, 4.6vw, 52px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -.03em;
+}
+
+/* "specificity": set in mono, so every letter sits in an exact, equal cell (the precise half of the tagline,
+   against the loose, tilted "personality"). Hover paints / unpaints a letter and fires sparks (precise.js). */
+.precise {
+  position: relative;
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: .9em;
+  font-weight: 700;
+  letter-spacing: -.04em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.precise .pc { display: inline-block; transition: color .25s; }
+/* Sparks: a square, or a "+" drawn with two bars; size from --s, colour from currentColor. precise.js moves them. */
+.pc-spark {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: var(--s, 6px);
+  height: var(--s, 6px);
+  background: currentColor;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+.pc-spark--plus {
+  background:
+    linear-gradient(currentColor, currentColor) center / 100% 28% no-repeat,
+    linear-gradient(currentColor, currentColor) center / 28% 100% no-repeat;
+}
+
+/* "personality": a tilted sticker. Hover swaps the word for a generated pair (persona.js), and the box stretches
+   to fit and takes a new pastel fill. It starts its own line so a longer pair grows to the right instead of wrapping out from under
+   the cursor. */
+.persona {
+  --pbg: var(--accent);
+  position: relative;
+  isolation: isolate;
+  display: inline-block;
+  max-width: 100%;
+  padding: 0 .2em .06em;
+  font-weight: 800;
+  transform: rotate(var(--tilt, -2.5deg));
+  transition: transform .45s var(--spring);
+}
+.persona::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--pbg);
+  border: var(--bw) solid var(--ink);
+  border-radius: 16px;
+  box-shadow: 4px 5px 0 var(--ink);
+  transition: background-color .35s;
+}
+.persona.is-stretching .persona-w { white-space: nowrap; }
+.persona-w { display: inline-block; }
+/* Hover target: its box doesn't rotate, so it stays put while the tilted box inside swings (see persona.js). */
+.persona-hit { display: inline-block; max-width: 100%; }
+.persona-hit > .persona { pointer-events: none; }
+
+.hero-intro { max-width: 34em; margin: 28px 0 0; font-size: 19px; line-height: 1.55; }
+
+/* Scroll-velocity marquee */
+.marquee {
+  margin: 16px calc(var(--pad-x) * -1);   /* extra vertical room so the tilted ends don't touch the blocks above and below */
+  transform: rotate(-1.4deg);
+  padding: 14px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  background: var(--ink);
+  color: var(--paper);
+}
+.marquee-track { display: inline-flex; will-change: transform; }
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 40px;
+  padding-right: 40px;
+  font-size: 28px;
+  font-weight: 700;
+  font-stretch: 85%;
+  letter-spacing: -.02em;
+}
+.marquee-item::after { content: "✱"; color: var(--accent); transition: color .6s; }
+
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 72px 0 34px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--ink);
+}
+.section-head h2 { margin: 0; font-size: clamp(38px, 6vw, 64px); font-weight: 800; font-stretch: 80%; line-height: .9; letter-spacing: -.045em; }
+.section-head p { margin: 0; color: var(--muted); text-align: right; }
+
+/* Sticky stacking deck of game cards */
+.deck { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 34px; }
+
+.gcard {
+  position: sticky;
+  top: calc(22px + var(--i) * 14px);
+  transform-origin: 50% 0;
+}
+
+.gcard-a {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  min-height: 310px;
+  overflow: hidden;
+  text-decoration: none;
+  background: var(--paper);
+  border: var(--bw) solid var(--ink);
+  border-radius: 22px;
+  box-shadow: calc(var(--sx) * .7px) calc(var(--sy) * .7px) 0 0 var(--c);
+}
+
+/* Left panel: number column + the cover "pasted" on the accent color */
+.gcard-media {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 24px 26px 24px 22px;
+  background-color: var(--c);
+  color: var(--on-c, var(--ink));
+  background-image: url("../assets/card-texture.svg");   /* ← swap the panel texture here */
+  background-size: 14px 14px;
+  border-right: var(--bw) solid var(--ink);
+}
+
+.gcard-side {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: none;
+}
+.gcard-bignum {
+  font-size: 84px;
+  font-weight: 800;
+  font-stretch: 75%;
+  line-height: .8;
+  letter-spacing: -.06em;
+  transform-origin: 30% 60%;
+  transition: transform .7s var(--spring);
+}
+.gcard:hover .gcard-bignum { transform: rotate(-8deg); }
+.gcard[data-slug="catch-my-favourite-tv-show"]:hover .gcard-bignum { transform: rotate(360deg); }
+/* Ghost with Shadow: a see-through copy of the number slides out from under it, like the shadow unbinding */
+.gcard[data-slug="ghost-with-shadow"] .gcard-bignum { position: relative; isolation: isolate; }
+.gcard[data-slug="ghost-with-shadow"] .gcard-bignum::after {
+  content: attr(data-n);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  color: rgba(0, 0, 0, .28);
+  opacity: 0;
+  transition: transform .7s var(--spring), opacity .3s;
+  pointer-events: none;
+}
+.gcard[data-slug="ghost-with-shadow"]:hover .gcard-bignum { transform: none; }
+.gcard[data-slug="ghost-with-shadow"]:hover .gcard-bignum::after { opacity: 1; transform: translateY(80px); }
+.gcard-of { font-size: 11px; }
+
+/* The whole cover at itch.io's 630×500 ratio: no cropping */
+.gcard-cover {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  aspect-ratio: 630 / 500;
+  background: var(--paper);
+  border: var(--bw) solid var(--ink);
+  border-radius: 12px;
+  box-shadow: 5px 5px 0 var(--ink);
+  transform: rotate(var(--tilt, -2deg));
+  transition: transform .6s var(--spring), box-shadow .6s var(--spring);
+}
+/* Behind real media, match the border so rotated/rounded edges don't bleed a light seam */
+.gcard-cover:has(> img, > video) { background: var(--ink); }
+.gcard:hover .gcard-cover { transform: rotate(0deg) scale(1.03); box-shadow: 8px 8px 0 var(--ink); }
+.gcard-cover > img, .gcard-cover > video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 9px;
+}
+.gcard-cover-ph { display: grid; place-items: center; width: 100%; height: 100%; padding: 12px; font-size: 11px; text-align: center; }
+.gcard-tape {
+  position: absolute;
+  z-index: 1;
+  top: -12px;
+  left: 50%;
+  width: 72px;
+  height: 22px;
+  background: color-mix(in srgb, var(--paper) 92%, transparent);   /* off-white, almost opaque; lower % = more see-through */
+  border: 2px solid var(--ink);
+  transform: translateX(-50%) rotate(-4deg);
+}
+
+.gcard-body { display: flex; flex-direction: column; gap: 12px; padding: 22px 26px 24px; }
+.gcard-top { display: flex; justify-content: space-between; gap: 12px; color: var(--muted); font-size: 11px; }
+.gcard-title { margin: 0; font-size: 36px; font-weight: 800; line-height: .98; letter-spacing: -.035em; }
+.gcard-pitch { margin: 0; color: #343b45; font-size: 16.5px; line-height: 1.45; }
+.gcard-meta { margin: -2px 0 0; color: var(--muted); font: 600 11px/1.5 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+.gcard-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 8px;
+  font-weight: 700;
+}
+.arr { display: inline-block; transition: transform .45s var(--spring); }
+.gcard:hover .arr { transform: translateX(8px); }
+
+.sticker {
+  position: absolute;
+  z-index: 3;
+  top: -15px;
+  right: 22px;
+  padding: 8px 12px;
+  background: var(--white);
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 var(--ink);
+  font: 700 11px/1 var(--mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  transform: rotate(var(--r, 5deg));
+  transition: transform .5s var(--spring);
+}
+.gcard:hover .sticker { transform: rotate(calc(var(--r, 5deg) * -1)) scale(1.07); }
+
+.deck-end {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 90px 0 24px;
+  color: var(--muted);
+}
+.btn--big { padding: 20px 34px; font-size: 22px; font-weight: 800; letter-spacing: -.02em; box-shadow: 6px 6px 0 var(--ink); }
+.btn--big:hover { box-shadow: 8px 8px 0 var(--ink); }
+.btn--big:hover .arr { transform: translateX(6px); }
+
+/* ==========================================================================
+   How I Work (Home)
+   ========================================================================== */
+
+.how { margin-top: 96px; }
+.how-lede { max-width: 42em; margin: 0 0 40px; font-size: 19px; line-height: 1.55; }
+
+/* The loop: a vertical track of steps joined by a line. A real example from a game hangs off the steps that have one. */
+.loop { list-style: none; margin: 0 0 56px; padding: 0; }
+.loop-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 20px;
+  padding-bottom: 18px;
+}
+.loop-step::before {   /* the connecting line, running behind the number badges */
+  content: "";
+  position: absolute;
+  left: 25px; top: 26px; bottom: -26px;
+  border-left: 3px solid var(--ink);
+}
+.loop-step.is-last { padding-bottom: 0; }
+.loop-step.is-last::before { display: none; }
+.loop-n {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 52px; height: 52px;
+  background: var(--accent);
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: 700;
+  transition: transform .4s var(--spring), background-color .6s;
+}
+.loop-step:hover .loop-n { transform: rotate(-12deg) scale(1.08); }
+.loop-card {
+  padding: 22px 24px 24px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: 18px;
+  transition: transform .4s var(--spring), box-shadow .4s var(--spring);
+}
+.loop-step:hover .loop-card { transform: translate(-3px, -3px); box-shadow: 5px 5px 0 var(--ink); }
+.loop-card h3 { margin: 0 0 6px; font-size: 26px; font-weight: 800; font-stretch: 85%; letter-spacing: -.03em; line-height: 1.1; }
+.loop-card > p { margin: 0; max-width: 52ch; color: #3b3641; font-size: 16px; line-height: 1.5; }
+.loop-eg {
+  display: block;
+  margin-top: 16px;
+  padding: 14px 16px 15px;
+  background: var(--c, var(--accent));
+  color: var(--on-c, var(--ink));
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  transition: transform .4s var(--spring), box-shadow .4s var(--spring);
+}
+.loop-eg:hover { transform: translate(-2px, -2px) rotate(-.4deg); box-shadow: 4px 4px 0 var(--ink); }
+.loop-eg-tag { display: block; margin-bottom: 6px; font-size: 11px; font-weight: 700; }
+.loop-eg-tag .arr { display: inline-block; transition: transform .45s var(--spring); }
+.loop-eg:hover .arr { transform: translateX(4px); }
+.loop-eg-text { display: block; font-size: 15px; line-height: 1.5; }
+.loop-back {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 7px 12px;
+  border: 2px dashed var(--ink);
+  border-radius: 999px;
+  font-size: 11px;
+}
+
+/* A signed-note style disclosure: deliberate and visible, not a buried footnote */
+.ai-note {
+  position: relative;
+  max-width: 56em;
+  padding: 30px 28px 26px;
+  background: var(--ink);
+  color: var(--paper);
+  border: var(--bw) solid var(--ink);
+  border-radius: 20px;
+}
+.ai-stamp {
+  position: absolute;
+  top: -14px;
+  left: 24px;
+  padding: 5px 10px;
+  background: var(--accent);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  font-size: 11px;
+  letter-spacing: .08em;
+  transform: rotate(-2deg);
+}
+.ai-note h3 { margin: 8px 0 14px; font-size: clamp(22px, 3vw, 28px); letter-spacing: -.02em; }
+.ai-note-body p { max-width: 60ch; margin: 0 0 1em; opacity: .88; line-height: 1.55; }
+.ai-note-body p:last-child { margin-bottom: 0; }
+
+/* Highlights: ink text on a marker stripe in the page's accent colour (code, writing, art). */
+.hl {
+  display: inline-block;
+  padding: 0 .3em .04em;
+  background: var(--accent);
+  border-radius: 6px;
+  color: var(--ink);
+  font-weight: 800;
+  transform: rotate(-1.5deg);
+}
+.hl--r:nth-of-type(2) { transform: rotate(1.2deg); }
+

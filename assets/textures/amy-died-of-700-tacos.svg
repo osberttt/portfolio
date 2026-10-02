@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
+  <!-- Amy Died of 700 Tacos: the numbers under the story (taco counts). Seamless 56px tile; ink at low opacity so it tints with the card accent. Keep size in sync with texture.size (56) in the game's data file. -->
+  <g fill="#12161f" fill-opacity="0.12" font-family="'JetBrains Mono', ui-monospace, Consolas, monospace" font-weight="700" font-size="12">
+    <text x="2" y="12">700</text>
+    <text x="32" y="12">42</text>
+    <text x="14" y="26">3</text>
+    <text x="30" y="26">350</text>
+    <text x="2" y="40">100</text>
+    <text x="36" y="40">7</text>
+    <text x="16" y="54">699</text>
+    <text x="46" y="54">2</text>
+  </g>
+</svg>

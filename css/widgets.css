@@ -1,0 +1,39 @@
+/* Interactive widgets */
+.widget {
+  position: relative;
+  padding: 22px 24px 24px;
+  background: var(--ink);
+  color: var(--paper);
+  border: var(--bw) solid var(--ink);
+  border-radius: 20px;
+}
+.widget-bar { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 18px; opacity: .6; }
+.widget .btn { box-shadow: 4px 4px 0 var(--paper); }
+.widget .btn:hover { box-shadow: 6px 6px 0 var(--paper); }
+.widget .btn:active { box-shadow: 0 0 0 var(--paper); }
+
+.taco-line { margin: 0 0 22px; font-size: clamp(24px, 3.4vw, 34px); font-weight: 700; line-height: 1.2; letter-spacing: -.02em; }
+.taco-n { display: inline-block; min-width: 2ch; color: var(--accent); font-variant-numeric: tabular-nums; }
+.taco-out { transition: color .3s; }
+.widget.dead { animation: shake .45s; }
+.widget.dead .taco-out { color: var(--accent); }
+.taco-note { margin: 18px 0 0; opacity: .6; }
+.taco-scale { display: flex; justify-content: space-between; margin-top: 10px; opacity: .6; }
+.taco-row { display: flex; align-items: center; gap: 16px; }
+.taco-row input { flex: 1; }
+.taco-reset { opacity: 0; pointer-events: none; transition: opacity .3s; }
+.widget.dead .taco-reset { opacity: 1; pointer-events: auto; }
+@keyframes shake { 20%, 60% { transform: translateX(-8px); } 40%, 80% { transform: translateX(8px); } }
+
+input[type="range"] { -webkit-appearance: none; appearance: none; height: 28px; background: transparent; cursor: var(--cur-hand, pointer); }
+input[type="range"]::-webkit-slider-runnable-track { height: 10px; background: var(--paper); border-radius: 10px; }
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 30px; height: 30px;
+  margin-top: -10px;
+  background: var(--accent);
+  border: 3px solid var(--paper);
+  border-radius: 9px;
+}
+input[type="range"]::-moz-range-track { height: 10px; background: var(--paper); border-radius: 10px; }
+input[type="range"]::-moz-range-thumb { width: 26px; height: 26px; background: var(--accent); border: 3px solid var(--paper); border-radius: 9px; }

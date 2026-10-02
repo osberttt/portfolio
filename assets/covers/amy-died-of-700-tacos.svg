@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 500" width="630" height="500" role="img" aria-label="Amy died of 700 tacos">
+  <rect width="630" height="500" fill="#172111"/>
+  <g font-family="'Courier New', 'American Typewriter', Courier, monospace" font-size="56" fill="#dcf5a6" text-anchor="middle">
+    <text x="315" y="215">Amy died of</text>
+    <text x="315" y="290">700 tacos</text>
+  </g>
+</svg>
