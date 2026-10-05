@@ -124,14 +124,14 @@
 .vid-cover:focus-visible { outline: none; }
 .vid-cover:focus-visible .vid-btn { outline: 3px solid var(--paper); outline-offset: 4px; }
 
-/* Full-bleed hero media on case study pages */
-.media--hero { margin-inline: calc(var(--pad-x) * -1); }
-.media--hero > *:not(figcaption) { border-radius: 0; border-inline: 0; border-width: var(--bw) 0; }
+/* Hero video on case study pages: wider than the text column, but with a little room at each side of the screen */
+.media--hero { margin-inline: calc(var(--pad-x) * -.5); }
+.media--hero > *:not(figcaption) { border-radius: 16px; }
 .media--hero .ph { border-color: var(--ink); background: var(--c, var(--accent)); }
 .media--hero .ph-label { color: var(--ink); }
 .media--hero .vid-btn { width: 108px; height: 108px; }
 .media--hero .vid-btn svg { width: 44px; height: 44px; }
-.media--hero figcaption { padding-inline: var(--pad-x); }
+.media--hero figcaption { padding-inline: calc(var(--pad-x) * .5); }
 /* Screenshots stay inside the page margins, framed like the in-body images; full-bleed only suits video */
 .media--hero:has(> img) { margin-inline: 0; }
 .media--hero > img { border: var(--bw) solid var(--ink); border-radius: 16px; }

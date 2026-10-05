@@ -132,7 +132,7 @@
 
 .gcard-a {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);   /* minmax(0): a cover's native size can't widen its column */
   min-height: 310px;
   overflow: hidden;
   text-decoration: none;

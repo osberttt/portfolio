@@ -9,13 +9,23 @@
   const { el } = App;
 
   // Amy: count 2 to 9 quickly, then land back on 1
+  const STEPS = [2, 3, 4, 5, 6, 7, 8, 9];
   function count(num) {
-    const orig = num.textContent, steps = [2, 3, 4, 5, 6, 7, 8, 9, 0], dur = 400;
+    const orig = num.textContent, dur = 400;
     return new Promise(done => {
-      steps.forEach((k, i) => setTimeout(() => { num.textContent = pad(k); }, i * dur / (steps.length + 1)));
+      STEPS.forEach((k, i) => setTimeout(() => { num.textContent = pad(k); }, i * dur / (STEPS.length + 1)));
       setTimeout(() => { num.textContent = orig; done(); }, dur);
     });
   }
+  // Digits differ in width: reserve room for the widest one up front, so the cover (flex: 1)
+  // neither resizes nor gets overlapped while the number counts
+  count.reserve = num => {
+    const orig = num.textContent;
+    let w = 0;
+    for (const t of [orig, ...STEPS.map(pad)]) { num.textContent = t; w = Math.max(w, num.offsetWidth); }
+    num.textContent = orig;
+    num.style.minWidth = (w + 1) + 'px';
+  };
 
   // Bloody Wasted: SVG noise mask whose threshold sweeps up, then a springy pop back in
   let filterEl = null;
@@ -68,6 +78,8 @@
       const fx = FX[card.dataset.slug];
       if (!fx) return;
       const num = $('.gcard-bignum', card);
+      // Measure once the webfont is in, or the widths are the fallback font's
+      if (fx.reserve) document.fonts.ready.then(() => fx.reserve(num));
       let busy = false;
       card.addEventListener('mouseenter', () => {
         if (busy) return;
