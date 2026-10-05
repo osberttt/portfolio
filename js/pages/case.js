@@ -28,7 +28,7 @@
       case 'struck':
         return `<p class="struck" data-reveal>${b.items.map(i => `<s>${esc(i)}</s>`).join('')}</p>`;
       case 'play':
-        // The page's main call to action: replaces the small Play button in the header
+        // A big call to action in the body. Set `only: true` to drop the header's small Play button.
         return g.play ? `<div class="play-big" data-reveal>
           <a class="btn btn--big" href="${esc(g.play)}" target="_blank" rel="noopener" data-magnetic data-cursor="${esc(C.play)}">${esc(b.label || T.caseStudy.play)} <span aria-hidden="true">↗</span></a>
           ${b.note ? `<p class="play-note">${esc(b.note)}</p>` : ''}
@@ -75,7 +75,7 @@
       if (b.type === 'section') { b.id = `s-${k}-${slugify(b.title)}`; sections.push(b); }
     });
     const CS = T.caseStudy;
-    const bigPlay = g.blocks.some(b => b.type === 'play');
+    const bigPlay = g.blocks.some(b => b.type === 'play' && b.only);
     const playBtn = bigPlay ? '' : g.play
       ? `<a class="btn" href="${esc(g.play)}" target="_blank" rel="noopener" data-magnetic data-cursor="${esc(C.play)}">${esc(CS.play)} <span aria-hidden="true">↗</span></a>`
       : `<span class="btn btn--off">${esc(CS.playSoon)}</span>`;

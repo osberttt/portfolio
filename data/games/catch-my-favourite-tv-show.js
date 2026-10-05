@@ -12,15 +12,11 @@
   sticker: 'finished game',
   cover: { kind: 'image', src: 'assets/covers/catch-my-fav-tv-show.png', label: 'title card' },
   // No hero and no sections on purpose: this page skips the usual case study so it doesn't spoil the game.
-  // The `play` block at the end replaces the header's Play button.
+  // Two Play buttons: the small one in the header, and the big one at the end.
   blocks: [
-    { type: 'struck', items: ['Design goal', 'Process', 'Result'] },
-    { type: 'text', size: 'lg', html: `<p>I tried to write this page like the other ones, but I couldn't find a way to talk about this game without spoiling it.</p>` },
-    { type: 'text', html: `
-      <p>It's not a crazy concept or a super unique mechanic. It's just a guy going home after work to watch TV. But it's the game where I feel like I found my own voice in writing and art.</p>
-      <p>So please just go play it. It takes about 5 minutes.</p>` },
-    { type: 'media', kind: 'image', src: 'assets/screenshots/cmfts.png', ratio: '16 / 10', label: 'Screenshot', caption: "One screenshot. That's all you get." },
-    { type: 'play', label: 'Go play it', note: 'About 5 minutes · on itch.io' },
+    { type: 'text', html: `<p>I couldn't find a way to talk about this game without spoiling anything. I don't wanna spoil it, and it only takes about 5 minutes to finish the game. So, I'll just beg you to play it xdd</p>` },
+    { type: 'media', kind: 'image', src: 'assets/screenshots/cmfts.png', ratio: '16 / 10', label: 'Screenshot' },
+    { type: 'play', label: 'Play on itch.io' },
   ],
 }
 );
