@@ -61,18 +61,17 @@ window.UI = {
       barRight: 'Drag the number',
       ate: 'You go back to October',
       goal: 'to save Amy',
-      reset: '↻ Restart from scratch',
       sliderLabel: 'Day of October',
       note: 'A sketch made for this portfolio. It is not in the jam build or the full game.',
       max: 45,
-      start: 3,   // a non-dead line, so the panel doesn't shake on load
-      // The first line whose `upTo` is at least the day is shown. `dead` shakes the panel.
+      start: 3,
+      // The first line whose `upTo` is at least the day is shown.
       lines: [
-        { upTo: 0, text: "There's no October, the world's in chaos. Amy will die too.", dead: true },
+        { upTo: 0, text: "There's no October, the world's in chaos. Amy will die too." },
         { upTo: 9, text: "You arrived too early. You can warn her about the danger, but it won't do much." },
         { upTo: 10, text: 'Save her.' },
-        { upTo: 31, text: "You arrived late. Amy's already dead.", dead: true },
-        { upTo: Infinity, text: "October has too many days. Nobody's got their salary yet. Amy's dead too.", dead: true },
+        { upTo: 31, text: "You arrived late. Amy's already dead." },
+        { upTo: Infinity, text: "October has too many days. Nobody's got their salary yet. Amy's dead too." },
       ],
     },
   },

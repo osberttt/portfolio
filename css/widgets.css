@@ -12,18 +12,13 @@
 .widget .btn:hover { box-shadow: 6px 6px 0 var(--paper); }
 .widget .btn:active { box-shadow: 0 0 0 var(--paper); }
 
-.taco-line { margin: 0 0 22px; font-size: clamp(24px, 3.4vw, 34px); font-weight: 700; line-height: 1.2; letter-spacing: -.02em; }
+.taco-line { margin: 22px 0 0; font-size: clamp(24px, 3.4vw, 34px); font-weight: 700; line-height: 1.2; letter-spacing: -.02em; }
 .taco-n { display: inline-block; min-width: 2ch; color: var(--accent); font-variant-numeric: tabular-nums; }
 .taco-out { transition: color .3s; }
-.widget.dead { animation: shake .45s; }
-.widget.dead .taco-out { color: var(--accent); }
 .taco-note { margin: 18px 0 0; opacity: .6; }
 .taco-scale { display: flex; justify-content: space-between; margin-top: 10px; opacity: .6; }
 .taco-row { display: flex; align-items: center; gap: 16px; }
 .taco-row input { flex: 1; }
-.taco-reset { opacity: 0; pointer-events: none; transition: opacity .3s; }
-.widget.dead .taco-reset { opacity: 1; pointer-events: auto; }
-@keyframes shake { 20%, 60% { transform: translateX(-8px); } 40%, 80% { transform: translateX(8px); } }
 
 input[type="range"] { -webkit-appearance: none; appearance: none; height: 28px; background: transparent; cursor: var(--cur-hand, pointer); }
 input[type="range"]::-webkit-slider-runnable-track { height: 10px; background: var(--paper); border-radius: 10px; }
