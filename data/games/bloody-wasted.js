@@ -11,7 +11,7 @@
   play: 'https://osbert.itch.io/bloodywasted',
   sticker: 'team-up',
   cover: { kind: 'image', src: 'assets/covers/bloody-wasted.png', label: 'gameplay gif' },    // card image on Home
-  hero: { kind: 'video', src: 'assets/videos/Bloody Wasted.mp4', label: 'Gameplay footage' },
+  hero: { kind: 'video', src: 'assets/videos/bloody wasted.mp4', label: 'Gameplay footage' },
   blocks: [
     { type: 'section', title: 'Design goal' },
     { type: 'text', html: `
@@ -27,7 +27,7 @@
     { type: 'text', html: `
       <p>With this many decisions, the pacing matters a lot, so I tried to keep anything that stops the player as short as possible. Eating is the only action that stops you, so I asked our artist to keep the eating animation short and snappy.</p>
       <p>I also programmed the dash effects: a ghost trail, a bit of lens distortion, and some chromatic aberration.</p>` },
-    { type: 'media', kind: 'video', src: 'assets/videos/Bloody Wasted Dine and Dash.mp4', label: 'Clip: eating, then dashing' },
+    { type: 'media', kind: 'video', src: 'assets/videos/bloody wasted dine and dash.mp4', label: 'Clip: eating, then dashing' },
 
     { type: 'section', title: 'Result' },
     { type: 'text', html: `<p>It came together well, and it's the most polished jam game I've worked on. A lot of that is thanks to the people below.</p>` },
