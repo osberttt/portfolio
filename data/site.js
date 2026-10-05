@@ -81,12 +81,15 @@ window.SITE = {
   },
 
   about: {
-    heading: "Hi, I'm Min Htet Naing (Osbert).",
+    // The heading is split so the name can be a sticker that swaps on hover (persona.js): "Hi, I'm <Osbert>."
+    headingBefore: "Hi, I'm",
+    name: 'Osbert',
+    nameFull: 'Min Htet Naing',
     bio: [
       "I'm a Myanmar student studying in Thailand, in the final year of my bachelor's degree in ICT.",
       'I make games in Unity with C#, mostly in game jams, either on my own or with small teams.',
     ],
-    tools: ['Unity', 'C#', 'Git', 'Mechanic design', 'Level design', 'System design', 'Narrative design', 'Prototyping', 'Agentic coding', 'Procreate'],
-    lookingFor: "I'm looking for a remote 4-month internship in a game designer role, starting December 2026, for university credits. I'm open to any kind of opportunity though, so feel free to say hi.",
+    tools: ['Unity', 'C#', 'Git', 'Prototyping', 'Agentic coding', 'Procreate'],
+    lookingFor: "I'm looking for a 4-month internship in a game designer role, starting December 2026, for university credits. I'm open to remote work or relocation, and to any kind of opportunity really, so feel free to say hi.",
   },
 };

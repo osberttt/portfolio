@@ -39,6 +39,7 @@ window.UI = {
 
   about: {
     eyebrow: '[ About ]',
+    bio: 'Who I am',
     toolbox: 'Toolbox',
     lookingFor: 'Looking for',
     contactLabel: 'Contact',   // not shown: read out by screen readers for the contact list

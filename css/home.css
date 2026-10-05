@@ -79,7 +79,9 @@
   transition: background-color .35s;
 }
 .persona.is-stretching .persona-w { white-space: nowrap; }
-.persona-w { display: inline-block; }
+/* Left origin: persona.js scales the word along with the box during a swap, so it has to grow out from
+   the frame's left edge rather than from its middle. */
+.persona-w { display: inline-block; transform-origin: left center; }
 /* Hover target: its box doesn't rotate, so it stays put while the tilted box inside swings (see persona.js). */
 .persona-hit { display: inline-block; max-width: 100%; }
 .persona-hit > .persona { pointer-events: none; }

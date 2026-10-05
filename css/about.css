@@ -2,11 +2,44 @@
    About page
    ========================================================================== */
 
-.about-text { max-width: 640px; margin-top: 36px; }
-.about-text .blk-text p { font-size: 19px; line-height: 1.55; }
-.mini-h { margin: 34px 0 12px; color: var(--muted); font: 700 11px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; }
+/* The name sticker in the heading. It can't be a rising .ch (a .word clips, which would cut the tilt and
+   shadow), so it fades up on its own once the letters of "Hi, I'm" have landed. */
+.about-name { opacity: 0; transform: translateY(.18em); }
+.play .about-name { animation: name-in .5s var(--ease) .34s forwards; }
+@keyframes name-in { to { opacity: 1; transform: none; } }
+/* --pscale: persona.js shrinks the type when the swapped name is wider than the column (data-persona-fit),
+   so "Min Htet Naing" stays on one line instead of wrapping inside the sticker. The heading's own
+   font-size is the 100% case, so the scale is applied against that rather than compounding on 1em. */
+/* No transition on the size: persona.js animates the box's width to match the new text, and it measures
+   that target right after setting --pscale. A font-size transition would make it measure the old size,
+   so the box would animate to the wrong width and snap when the type caught up. */
+.about-name { --pscale: 1; font-size: calc(var(--title-fs) * var(--pscale)); }
+/* No max-width here: the box must be free to report its full one-line width so persona.js can scale to it. */
+.about-name, .about-name .persona { max-width: none; }
+/* The hit area must not change size when the word swaps, or an edge slides out from under the pointer and
+   hover bounces enter/leave against each other. It is fixed to the resting word's box: the full-size line
+   height (smaller swapped type otherwise sits lower on the baseline and drags the box down), and the
+   resting width (the longer name is wider, so it is allowed to overflow the target rather than grow it). */
+.about-name { display: inline-flex; align-items: center; min-height: calc(var(--title-fs) * 1.05); vertical-align: top; }
+.about-name .persona { font-stretch: 100%; letter-spacing: -.02em; white-space: nowrap; }
+/* The full name is much wider than "Osbert", so the heading is sized to fit the longer of the two
+   on one line rather than the widest possible title. */
+.page-title--sm:has(.about-name) { --title-fs: clamp(38px, 5.4vw, 72px); font-size: var(--title-fs); }
+/* "Hi, I'm" gets its own line so the longer full name grows to the right instead of wrapping mid-sticker. */
+.about-head { display: block; margin-bottom: .14em; }
 
-.contact { margin-top: 64px; }
+/* Heading + contacts on the left, the writing on the right. Stacks below 860px (responsive.css). */
+.about-top { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(32px, 5vw, 72px); align-items: start; }
+.about-left { min-width: 0; position: sticky; top: 24px; }
+
+.about-text { min-width: 0; max-width: 560px; }
+.about-text > :first-child { margin-top: 0; }
+.about-text .blk-text p { font-size: 18px; line-height: 1.55; }
+.mini-h { margin: 28px 0 12px; color: var(--muted); font: 700 11px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; }
+
+/* Contacts: a vertical list. Mark, then the label with its handle underneath. Each row fills with its
+   own colour from the bottom on hover, like the Projects rows. */
+.contact { margin-top: 36px; }
 .contact-list { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
 .contact-list li { border-bottom: 2px solid var(--ink); }
 .contact-row {
@@ -15,17 +48,21 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 22px 8px;
+  gap: 14px;
+  padding: 11px 10px;
   cursor: var(--cur-hand, pointer);
   text-decoration: none;
   position: relative;
   isolation: isolate;
 }
-.contact-row strong { font-size: clamp(30px, 5.5vw, 54px); font-weight: 800; font-stretch: 85%; line-height: 1; letter-spacing: -.045em; }
-.contact-val { display: flex; align-items: center; gap: 12px; text-align: right; }
-.contact-row .arr { font-size: 26px; }
+.contact-i { display: block; flex: none; width: 22px; }
+.contact-i svg { display: block; width: 100%; height: auto; }
+.contact-k { display: grid; gap: 2px; min-width: 0; }
+.contact-k strong { font-size: 17px; font-weight: 800; line-height: 1.1; letter-spacing: -.02em; }
+.contact-val { font-size: 11px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.contact-row:hover .contact-val { color: inherit; }
+.contact-row .arr { margin-left: auto; flex: none; font-size: 16px; }
+.contact-i, .contact-row .arr { transition: transform .25s var(--spring); }
+.contact-row:hover .contact-i { transform: rotate(-8deg) scale(1.12); }
 .contact-row:hover .arr { transform: translateX(4px) rotate(-45deg); }
-
 

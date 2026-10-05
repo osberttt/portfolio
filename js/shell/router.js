@@ -17,7 +17,7 @@
     home: ['reveal', 'magnetic', 'videos', 'persona', 'precise', 'marquee', 'deck', 'numfx'],
     game: ['reveal', 'magnetic', 'toc', 'widgets'],   // no 'videos': case-study clips are click-to-play
     projects: ['reveal', 'magnetic', 'videos', 'rows'],
-    about: ['reveal', 'magnetic', 'videos'],
+    about: ['reveal', 'magnetic', 'videos', 'persona'],   // persona: the name in the heading
   };
 
   let busy = false, queued = false, first = true, currentKey = null, current = null;

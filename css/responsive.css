@@ -11,6 +11,11 @@
   .case-body { grid-template-columns: minmax(0, 1fr); }
   .toc { display: none; }
   .gcard-bignum { font-size: 70px; }
+  /* About: the writing drops under the heading, and the contacts go last */
+  .about-top { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .about-left { position: static; display: contents; }
+  .about-text { order: 1; max-width: 640px; }
+  .contact { order: 2; margin-top: 38px; }
 }
 
 @media (max-width: 720px) {
@@ -81,8 +86,6 @@
   .row-tag { display: none; }
   .row-title { font-size: 20px; }
   .row-body { padding-left: 8px; }
-
-  .contact-val .mono { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
