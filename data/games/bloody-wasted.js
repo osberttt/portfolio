@@ -11,7 +11,7 @@
   play: 'https://osbert.itch.io/bloodywasted',
   sticker: 'team-up',
   cover: { kind: 'image', src: 'assets/covers/bloody-wasted.png', label: 'gameplay gif' },    // card image on Home
-  hero: { kind: 'video', src: 'assets/videos/Bloody Wasted.mp4', label: 'Gameplay footage: the race home' },
+  hero: { kind: 'video', src: 'assets/videos/Bloody Wasted.mp4', label: 'Gameplay footage' },
   blocks: [
     { type: 'section', title: 'Design goal' },
     { type: 'text', html: `

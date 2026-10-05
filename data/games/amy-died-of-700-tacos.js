@@ -11,7 +11,7 @@
   play: 'https://osbert.itch.io/amy-died-of-700-tacos-jam',
   sticker: 'working on steam release now',
   cover: { kind: 'image', src: 'assets/covers/amy-died-of-700-tacos.svg', label: 'title card' },
-  hero: { kind: 'video', src: 'assets/videos/amy.mp4', label: 'Jam build footage' },
+  hero: { kind: 'video', src: 'assets/videos/amy.mp4', label: 'Gameplay footage' },
   blocks: [
     { type: 'section', title: 'Design goal' },
     { type: 'text', html: `

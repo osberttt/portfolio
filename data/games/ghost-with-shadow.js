@@ -11,7 +11,7 @@
   play: 'https://osbert.itch.io/ghost-with-shadow',
   sticker: 'top 10 selection',
   cover: { kind: 'image', src: 'assets/covers/ghost-with-shadow.png', label: 'gameplay gif' },
-  hero: { kind: 'video', src: 'assets/videos/ghost1.mp4', label: 'Gameplay footage: bind, unbind, swap' },
+  hero: { kind: 'video', src: 'assets/videos/ghost1.mp4', label: 'Gameplay footage' },
   blocks: [
     { type: 'section', title: 'Design goal' },
     { type: 'text', html: `
