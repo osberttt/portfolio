@@ -95,6 +95,9 @@
 .blk-text p:last-child { margin-bottom: 0; }
 .blk-text em, .callout em { font-style: italic; }
 .blk-text strong { font-weight: 750; }
+/* Inline links: a thick accent underline that fills in behind the word on hover */
+.blk-text a { font-weight: 750; text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: .3em; text-underline-offset: -.12em; text-decoration-skip-ink: none; border-radius: 4px; transition: background-color .15s; }
+.blk-text a:hover { background: var(--accent); color: var(--ink); }
 .blk-text--lg p { max-width: 26em; font-size: clamp(24px, 3.2vw, 34px); font-weight: 700; line-height: 1.18; letter-spacing: -.025em; }
 
 /* Page without sections: no contents sidebar, one column */
