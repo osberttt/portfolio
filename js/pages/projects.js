@@ -12,8 +12,7 @@
     const g = GAMES.find(x => x.slug === j.featured);
     if (!g) return '';
     return `<li class="row is-featured" style="--c:${g.accent};--on-c:${onColor(g.accent)};--d:${n % 4}" data-reveal>
-      <a class="row-head wipe" href="#/projects/${g.slug}" data-cursor="${esc(C.caseStudy)}" data-color="${g.accent}"
-         data-preview="${esc(g.title)}" data-preview-src="${esc(g.thumb || (g.cover && g.cover.src) || '')}">
+      <a class="row-head wipe" href="#/projects/${g.slug}" data-cursor="${esc(C.caseStudy)}" data-color="${g.accent}">
         <span class="row-num">${pad(n + 1)}</span>
         <span class="row-main">
           <span class="row-title">${esc(g.title)}<em>${esc(T.projects.featured)}</em></span>
@@ -28,8 +27,7 @@
   function projectRow(p, n, palette = ROW_COLORS, shade = n) {
     const c = p.color || palette[shade % palette.length];
     return `<li class="row" style="--c:${c};--d:${n % 4}" data-reveal>
-      <button class="row-head wipe" aria-expanded="false" data-cursor="${esc(C.expand)}" data-color="${c}"
-         data-preview="${esc(p.title)}" data-preview-src="${esc(p.thumb || '')}">
+      <button class="row-head wipe" aria-expanded="false" data-cursor="${esc(C.expand)}" data-color="${c}">
         <span class="row-num">${pad(n + 1)}</span>
         <span class="row-main">
           <span class="row-title">${esc(p.title)}</span>

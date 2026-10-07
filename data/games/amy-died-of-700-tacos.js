@@ -10,9 +10,7 @@
   jam: 'GMTK Game Jam 2024',
   play: 'https://osbert.itch.io/amy-died-of-700-tacos-jam',
   sticker: 'working on steam release now',
-  cover: { kind: 'image', src: 'assets/covers/amy-died-of-700-tacos.svg', label: 'title card' },
-  thumb: 'assets/covers/amy-died-of-700-tacos.png',   // itch cover, used for the hover preview on Projects
-  hero: { kind: 'video', src: 'assets/videos/amy.mp4', label: 'Gameplay footage' },
+  cover: { kind: 'image', src: 'assets/covers/amy-died-of-700-tacos.svg', label: 'title card' },  hero: { kind: 'video', src: 'assets/videos/amy.mp4', label: 'Gameplay footage' },
   blocks: [
     { type: 'section', title: 'Design goal' },
     { type: 'text', html: `
