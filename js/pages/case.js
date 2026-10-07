@@ -88,7 +88,7 @@
         <dl class="spec" data-reveal style="--d:1">
           ${g.tags.map((t, k) => `<div style="grid-column: span ${tagSpans(g.tags.length)[k]}"><dt>${pad(k + 1)}</dt><dd>${esc(t)}</dd></div>`).join('')}
         </dl>
-        ${playBtn ? `<div class="case-actions" data-reveal style="--d:2">${playBtn}</div>` : ''}
+        ${playBtn ? `<div class="case-actions" data-reveal style="--d:2">${playBtn}${g.playNote ? `<p class="play-note">${esc(g.playNote)}</p>` : ''}</div>` : ''}
         ${g.sticker ? `<span class="sticker" style="--r:7deg">${esc(g.sticker)}</span>` : ''}
       </header>
 
