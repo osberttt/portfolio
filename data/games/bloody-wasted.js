@@ -31,6 +31,11 @@
 
     { type: 'section', title: 'Result' },
     { type: 'text', html: `<p>It came together well, and it's the most polished jam game I've worked on. A lot of that is thanks to the people below.</p>` },
+    { type: 'gallery', cols: 3, items: [
+      { kind: 'image', src: 'assets/screenshots/bloody-wasted/01.gif', label: 'Gameplay gif' },
+      { kind: 'image', src: 'assets/screenshots/bloody-wasted/02.gif', label: 'Gameplay gif' },
+      { kind: 'image', src: 'assets/screenshots/bloody-wasted/03.gif', label: 'Gameplay gif' },
+    ] },
 
     { type: 'section', title: 'Team' },
     { type: 'credits', items: [

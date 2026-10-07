@@ -89,6 +89,8 @@
 .row-body { display: grid; gap: 20px; padding: 8px 8px 30px 68px; }
 .row-text p { max-width: 62ch; margin: 0 0 1em; }
 .row-text p:last-child { margin-bottom: 0; }
+.row-shots { gap: 10px; }
+.row-shots .media > img { border-radius: 8px; }
 
 /* Floating hover preview that follows the cursor */
 .preview {

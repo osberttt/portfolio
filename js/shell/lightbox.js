@@ -1,7 +1,8 @@
 /* Screenshot viewer. Any img[data-lightbox] opens it full screen on the page's backdrop.
    Closes with the Back button, Esc, a click outside the image, or the browser's own Back
    (opening pushes a history entry, so Back closes the viewer instead of leaving the page).
-   Arrows / ← → step through the other screenshots on the same page. */
+   Arrows / ← → step through the other screenshots on the same page (or inside the
+   nearest [data-lb-group], e.g. one Projects row). */
 (() => {
   'use strict';
   const { $, $$, esc, pad } = App.util;
@@ -41,7 +42,7 @@
   }
 
   function open(src) {
-    list = $$('img[data-lightbox]', el.view);
+    list = $$('img[data-lightbox]', src.closest('[data-lb-group]') || el.view);
     show(Math.max(0, list.indexOf(src)));
     box.hidden = false;
     history.pushState({ lightbox: true }, '');

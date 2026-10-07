@@ -43,7 +43,7 @@ window.SITE = {
         body: "I study games that have a similar experience or similar systems, and analyse what works and what doesn't. I try to understand how they solve certain problems, and how I can use those solutions in my games, in the same way or in the opposite way.",
         eg: {
           game: 'bloody-wasted',
-          text: "I looked at Hotline Miami and Mr. Shifty for fast-paced movement in a top-down angle. Then I looked at Subway Surfers and Crossy Road for running down a road full of obstacles. In those games it only takes 1 or 2 mistakes to fail, and in my game the mistakes just slowly build up. So I needed to work on difficulty, pacing and feedback using these differences.",
+          text: "I looked at Subway Surfers and Crossy Road for running down a road full of obstacles. In those games it only takes 1 or 2 mistakes to fail, and in my game the mistakes just slowly build up. So I needed to work on difficulty, pacing and feedback using these differences.",
         },
       },
       {

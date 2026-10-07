@@ -11,6 +11,7 @@
   play: 'https://osbert.itch.io/amy-died-of-700-tacos-jam',
   sticker: 'working on steam release now',
   cover: { kind: 'image', src: 'assets/covers/amy-died-of-700-tacos.svg', label: 'title card' },
+  thumb: 'assets/covers/amy-died-of-700-tacos.png',   // itch cover, used for the hover preview on Projects
   hero: { kind: 'video', src: 'assets/videos/amy.mp4', label: 'Gameplay footage' },
   blocks: [
     { type: 'section', title: 'Design goal' },
@@ -28,6 +29,11 @@
     { type: 'section', title: 'Process' },
     { type: 'text', html: `
       <p>Although it was a 3-day jam, I made the jam version in 1 day as I was busy at the time. I did the game design, programming and writing myself, used a free font, and had no art assets or sounds.</p>` },
+    { type: 'gallery', cols: 3, items: [
+      { kind: 'image', src: 'assets/screenshots/amy-died-of-700-tacos/01.png', label: 'Jam version' },
+      { kind: 'image', src: 'assets/screenshots/amy-died-of-700-tacos/02.png', label: 'Jam version' },
+      { kind: 'image', src: 'assets/screenshots/amy-died-of-700-tacos/03.png', label: 'Jam version' },
+    ] },
 
     { type: 'section', title: 'Result' },
     { type: 'text', html: `

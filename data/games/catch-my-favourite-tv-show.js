@@ -15,7 +15,12 @@
   // Two Play buttons: the small one in the header, and the big one at the end.
   blocks: [
     { type: 'text', html: `<p>I couldn't find a way to talk about this game without spoiling anything. I don't wanna spoil it, and it only takes about 5 minutes to finish the game. So, I'll just beg you to play it xdd</p>` },
-    { type: 'media', kind: 'image', src: 'assets/screenshots/cmfts.png', ratio: '16 / 10', label: 'Screenshot' },
+    { type: 'gallery', cols: 2, items: [
+      { kind: 'image', src: 'assets/screenshots/cmfts.png', ratio: '16 / 10', label: 'Screenshot' },
+      { kind: 'image', src: 'assets/screenshots/catch-my-favourite-tv-show/02.jpg', ratio: '16 / 10', label: 'Screenshot' },
+      { kind: 'image', src: 'assets/screenshots/catch-my-favourite-tv-show/03.jpg', ratio: '16 / 10', label: 'Screenshot' },
+      { kind: 'image', src: 'assets/screenshots/catch-my-favourite-tv-show/04.jpg', ratio: '16 / 10', label: 'Screenshot' },
+    ] },
     { type: 'play', label: 'Play on itch.io' },
   ],
 }

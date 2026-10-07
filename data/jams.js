@@ -12,6 +12,12 @@ window.JAMS = [
     color: '',
     thumb: 'assets/covers/trouble-in-otterville.png',
     link: 'https://osbert.itch.io/trouble-in-otterville',
+    shots: [
+      { src: 'assets/screenshots/trouble-in-otterville/01.jpg' },
+      { src: 'assets/screenshots/trouble-in-otterville/02.jpg' },
+      { src: 'assets/screenshots/trouble-in-otterville/03.jpg' },
+      { src: 'assets/screenshots/trouble-in-otterville/04.jpg' },
+    ],
     paragraphs: [
       "An otter dies over and over again just to get to work. His route is full of things that can kill him, and every level ends at a bus stop, with his job still many stops away.",
       "Your corpse stays behind and becomes part of the puzzle. You can stand on it, hide behind it, or use it to launch the next run. Later you can also move the things that kill you, like the chimney, the fountain and the windmill, so where you die becomes something you plan.",
@@ -27,6 +33,11 @@ window.JAMS = [
     color: '',
     thumb: 'assets/covers/777.png',
     link: 'https://osbert.itch.io/777',
+    shots: [
+      { src: 'assets/screenshots/777/01.jpg' },
+      { src: 'assets/screenshots/777/02.jpg' },
+      { src: 'assets/screenshots/777/03.jpg' },
+    ],
     paragraphs: [
       "A bullet hell boss fight with a slot machine in it. You dodge the boss, collect chips, and spin the slot for more health, more chips, or a hit on the boss.",
       "The first plan was to let you change the slot's deck to control the payouts, but we didn't have time to tune it, so you had no real way to fight back. After the jam I replaced it with a star you earn from payouts and throw at the boss.",
@@ -40,8 +51,13 @@ window.JAMS = [
     role: 'Design & Programming',
     team: 'Solo',
     color: '',
-    thumb: '',
+    thumb: 'assets/covers/soul-collector.png',
     link: 'https://osbert.itch.io/soul-collector',
+    shots: [
+      { src: 'assets/screenshots/soul-collector/01.jpg' },
+      { src: 'assets/screenshots/soul-collector/02.jpg' },
+      { src: 'assets/screenshots/soul-collector/03.jpg' },
+    ],
     paragraphs: [
       'A puzzle-based roguelike metroidvania: you collect souls for an ancient god who is holding them captive.',
       '6 locations, 33 unique items and 19 interactables. The dash is not a given; it is an item you have to find.',
@@ -54,8 +70,13 @@ window.JAMS = [
     role: 'Game Designer',
     team: 'Team of 4',
     color: '',
-    thumb: '',
+    thumb: 'assets/covers/doomsday-kickoff.png',
     link: 'https://osbert.itch.io/doomsday-kickoff',
+    shots: [
+      { src: 'assets/screenshots/doomsday-kickoff/01.png' },
+      { src: 'assets/screenshots/doomsday-kickoff/02.png' },
+      { src: 'assets/screenshots/doomsday-kickoff/03.png' },
+    ],
     paragraphs: [
       'Kick off the doomsday with as few lives as you can. Dodge bullets, break doors, defeat the dwarf army and launch the bomb that will destroy the world.',
       'I designed it. ChrisXia programmed, JuanMaP5 composed the music and Venetuh made the art.',
@@ -68,8 +89,12 @@ window.JAMS = [
     role: 'Design & Programming',
     team: 'Solo',
     color: '',
-    thumb: '',
+    thumb: 'assets/covers/a-strike-of-ice-and-fire.png',
     link: 'https://osbert.itch.io/a-strike-of-ice-and-fire',
+    shots: [
+      { src: 'assets/screenshots/a-strike-of-ice-and-fire/01.png' },
+      { src: 'assets/screenshots/a-strike-of-ice-and-fire/02.png' },
+    ],
     paragraphs: [
       "A two-gun shooter built around one rule: don't shoot fire with fire, or ice with ice.",
     ],
@@ -83,6 +108,12 @@ window.JAMS = [
     color: '',
     thumb: 'assets/covers/get-power.png',
     link: 'https://osbert.itch.io/get-power',
+    shots: [
+      { src: 'assets/screenshots/get-power/01.jpg' },
+      { src: 'assets/screenshots/get-power/02.jpg' },
+      { src: 'assets/screenshots/get-power/03.jpg' },
+      { src: 'assets/screenshots/get-power/04.jpg' },
+    ],
     paragraphs: [
       'A match-3 word game. Every tile carries a letter and a rank, and matching upgrades them: letters climb A to B, ranks climb from wood to marble.',
       'The goal is to spell POWER, horizontally or vertically, across 10 levels. The theme link is climbing the ranks to get power.',
@@ -95,8 +126,11 @@ window.JAMS = [
     role: 'Design, Programming, Art',
     team: 'Team of 2',
     color: '',
-    thumb: '',
+    thumb: 'assets/covers/an-autumn-sweep.png',
     link: 'https://osbert.itch.io/an-autumn-sweep',
+    shots: [
+      { src: 'assets/screenshots/an-autumn-sweep/01.png', ratio: '320 / 301' },
+    ],
     paragraphs: [
       'A cozy sweeping game. You are the wind: sweep the leaves off a village, tease the cats, and try not to blow out the candles.',
       'I did the design, programming and art. JuanMaP5 made the music.',
@@ -122,8 +156,13 @@ window.JAMS = [
     role: 'Design & Programming',
     team: 'Solo',
     color: '',
-    thumb: '',
+    thumb: 'assets/covers/dodge-or-die.png',
     link: 'https://osbert.itch.io/dodge-or-die',
+    shots: [
+      { src: 'assets/screenshots/dodge-or-die/01.gif' },
+      { src: 'assets/screenshots/dodge-or-die/02.gif' },
+      { src: 'assets/screenshots/dodge-or-die/03.gif' },
+    ],
     paragraphs: [
       'A dicey puzzle game with roguelike elements.',
     ],
@@ -135,8 +174,9 @@ window.JAMS = [
     role: '',
     team: 'Team of 4',
     color: '',
-    thumb: '',
+    thumb: 'assets/covers/dungeon-demise.png',
     link: 'https://tavi006.itch.io/dungeon-demise',
+    video: { kind: 'youtube', src: 'SiBiHeEZpZE', label: 'Trailer' },
     paragraphs: [
       'A top-down dungeon crawler shooter: escape the dungeon before it collapses on you.',
       'Made with Tavi006, Meatball and JuanMaP.',
