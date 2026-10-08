@@ -9,6 +9,7 @@
   texture: { src: 'assets/textures/ghost-with-shadow.svg', size: 32 },   // pattern on the Home card's colored panel
   jam: 'Game Makers Game Jam 2025',
   play: 'https://osbert.itch.io/ghost-with-shadow',
+  playNote: 'Free browser game of about 5 - 15 minutes of playtime',
   sticker: 'top 10 selection',
   cover: { kind: 'image', src: 'assets/covers/ghost-with-shadow.png', label: 'gameplay gif' },
   hero: { kind: 'video', src: 'assets/videos/ghost1.mp4', label: 'Gameplay footage' },

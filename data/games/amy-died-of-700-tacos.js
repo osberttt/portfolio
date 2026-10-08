@@ -9,6 +9,7 @@
   texture: { src: 'assets/textures/amy-died-of-700-tacos.svg', size: 56 },   // pattern on the Home card's colored panel
   jam: 'GMTK Game Jam 2024',
   play: 'https://osbert.itch.io/amy-died-of-700-tacos-jam',
+  playNote: 'Free browser game of about 5 minutes of playtime',
   sticker: 'working on steam release now',
   cover: { kind: 'image', src: 'assets/covers/amy-died-of-700-tacos.svg', label: 'title card' },  hero: { kind: 'video', src: 'assets/videos/amy.mp4', label: 'Gameplay footage' },
   blocks: [

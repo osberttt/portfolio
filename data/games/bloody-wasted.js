@@ -9,6 +9,7 @@
   texture: { src: 'assets/textures/bloody-wasted.svg', size: [44, 32] },   // pattern on the Home card's colored panel
   jam: '20 Second Game Jam 2025',
   play: 'https://osbert.itch.io/bloodywasted',
+  playNote: 'Free browser game of about 5 minutes of playtime',
   sticker: 'team-up',
   cover: { kind: 'image', src: 'assets/covers/bloody-wasted.png', label: 'gameplay gif' },    // card image on Home
   hero: { kind: 'video', src: 'assets/videos/bloody wasted.mp4', label: 'Gameplay footage' },
