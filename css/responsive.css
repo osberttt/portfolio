@@ -10,6 +10,7 @@
   :root { --pad-x: 36px; }
   .case-body { grid-template-columns: minmax(0, 1fr); }
   .toc { display: none; }
+  .keys { grid-template-columns: repeat(2, minmax(0, 1fr)); }   /* three verb labels get too tight here */
   .gcard-bignum { font-size: 70px; }
   /* About: the writing drops under the heading, and the contacts go last */
   .about-top { grid-template-columns: minmax(0, 1fr); gap: 32px; }

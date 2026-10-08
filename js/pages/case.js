@@ -46,7 +46,8 @@
       case 'steps':
         return `<ol class="steps" data-reveal>${b.items.map((s, k) => `<li style="--k:${k}"><div><h4>${esc(s.title)}</h4><p>${s.html}</p></div></li>`).join('')}</ol>`;
       case 'keys':
-        return `<div class="keys" data-reveal>${b.items.map(k => `<div class="key"><span class="keycap">${esc(k.key)}</span><p>${k.html}</p></div>`).join('')}</div>`;
+        // The verb sits on the box's top border; the keycap below it is the key you actually press
+        return `<div class="keys" data-reveal>${b.items.map(k => `<div class="key"><span class="key-verb">${esc(k.key)}</span><span class="keycap">${esc(k.cap)}</span><p>${k.html}</p></div>`).join('')}</div>`;
       case 'stats':
         return `<div class="stats" data-reveal>${b.items.map(s => `<div class="stat"><b ${/^\d+$/.test(s.value) ? `data-count="${s.value}"` : ''}>${esc(s.value)}</b><span>${esc(s.label)}</span></div>`).join('')}</div>`;
       case 'credits':

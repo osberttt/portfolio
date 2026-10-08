@@ -20,11 +20,11 @@
       <p>When I was coming up with the mechanics, <a href="https://twice-twice.itch.io/mobias-trip" target="_blank" rel="noopener" data-cursor="Visit">Mobia's Trip</a> was also a big inspiration.</p>` },
 
     { type: 'section', title: 'Mechanic design' },
-    { type: 'text', html: `<p>The game uses 3 buttons: jump, bind/unbind, and swap.</p>` },
+    { type: 'text', html: `<p>A 3-button platformer, laid out like Celeste.</p>` },
     { type: 'keys', items: [
-      { key: 'Jump', html: 'A simple jump, like in most platformers.' },
-      { key: 'Bind / Unbind', html: 'Makes the shadow mimic you, or stop mimicking you.' },
-      { key: 'Swap', html: 'Swaps your position with the shadow.' },
+      { key: 'Jump', cap: 'C', html: 'A simple jump, like in most platformers.' },
+      { key: 'Bind / Unbind', cap: 'X', html: 'Makes the shadow mimic you, or stop mimicking you.' },
+      { key: 'Swap', cap: 'Z', html: 'Swaps your position with the shadow.' },
     ] },
     { type: 'text', html: `<p>To get through a wall, you unbind, step back so your shadow is in front of you, bind again, and walk forward. Your shadow ends up on the other side of the wall, and then you swap places with it. Floors work the same way, with a jump.</p>` },
 

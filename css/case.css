@@ -208,17 +208,40 @@
 .steps p { margin: 0; }
 
 .keys { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-.key { padding: 18px; background: var(--paper); border: 2px solid var(--ink); border-radius: 16px; }
+/* Top padding leaves room for the verb label straddling the border */
+.key { position: relative; padding: 26px 18px 18px; background: var(--paper); border: 2px solid var(--ink); border-radius: 16px; }
+/* The verb ("Jump", "Bind / Unbind") sits on the top border, the paper background breaking the line */
+.key-verb {
+  position: absolute;
+  top: calc(-1 * var(--verb-h) / 2 - 1px);   /* half the label sits above the 2px border */
+  left: 16px;
+  --verb-h: 14px;
+  height: var(--verb-h);
+  display: inline-flex;
+  align-items: center;
+  max-width: calc(100% - 32px);
+  padding: 0 8px;
+  background: var(--paper);
+  color: var(--ink);
+  font: 700 11px/1 var(--mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .keycap {
   display: inline-block;
   margin-bottom: 14px;
+  min-width: 42px;
   padding: 10px 14px;
   background: var(--accent);
   border: 2px solid var(--ink);
   border-radius: 10px;
   box-shadow: 0 6px 0 var(--ink);
-  font: 700 13px/1 var(--mono);
+  font: 700 15px/1 var(--mono);
   letter-spacing: .06em;
+  text-align: center;
   text-transform: uppercase;
   transition: transform .12s, box-shadow .12s;
 }
