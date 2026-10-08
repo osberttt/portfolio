@@ -5,7 +5,7 @@ window.UI = {
   navBack: 'Back',                   // nav button, left of the name: previous page, or one level up
 
   // Full-screen screenshot viewer
-  lightbox: { back: 'Back', prev: 'Previous screenshot', next: 'Next screenshot', hint: 'Esc to close · ← → to browse' },
+  lightbox: { back: 'Back', prev: 'Previous screenshot', next: 'Next screenshot' },
 
   home: {
     eyebrow: '[ Portfolio {year} ]',

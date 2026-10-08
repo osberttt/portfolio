@@ -17,7 +17,6 @@
     <div class="lb-bar">
       <button class="lb-back" type="button" data-lb="close" data-cursor="${esc(C.back)}"><span aria-hidden="true">←</span> ${esc(L.back)}</button>
       <span class="lb-count"></span>
-      <span class="lb-hint">${esc(L.hint)}</span>
     </div>
     <figure class="lb-fig">
       <img alt="">
