@@ -16,56 +16,76 @@
   blocks: [
     { type: 'section', title: 'Design goal' },
     { type: 'text', html: `
-      <p>The jam had one rule: every session lasts <strong>20 seconds</strong>.</p>
-      <p>To use all 20 of them, I wanted a fast 2D runner with high decision density &mdash; a lot of small choices every second, and room to get good at making them.</p>` },
+      <p>The jam came with a rule that every game had to last <strong>20 seconds</strong> or less.</p>
+      <p>I wanted to make the most of those 20 seconds with a fast-paced game and a high density of micro-decisions.</p>` },
 
-    { type: 'section', title: 'Mechanics' },
+    { type: 'section', title: 'Concept' },
     { type: 'text', html: `
-      <p>You're a vampire running home before the sun reaches you, so time and distance are the currencies. Blood is what you convert between them.</p>` },
+      <p>The first thing I tried to figure out was how to make a 20-second timer interesting.</p>
+      <p>I imagined a vampire king, possibly Dracula, on a battlefield just as the sun was about to rise. He'd be using all his strength to run back to his castle, dashing through enemies and obstacles along the way. Occasionally, he could stop to drink blood from enemies or heal his followers, recovering strength or morale at the cost of precious time.</p>
+      <p>He had only 20 seconds before sunrise. This was my pitch to the jam team.</p>
+      <p><a href="https://paperclovers.carrd.co/" target="_blank" rel="noopener" data-cursor="Visit">Our artist</a> came up with an even better concept. Instead of a vampire king on a battlefield, we had a teenage vampire girl who partied so hard that she forgot to return home before sunrise. Now she's almost passed out from drinking, and she's rushing home through a festive street full of dancing people.</p>
+      <p>I liked this direction a lot more. It kept the timer and resource management from my original idea but gave the game a much more playful premise.</p>` },
+
+    { type: 'section', title: 'Movement' },
+    { type: 'text', html: `
+      <p>I wanted players to run really fast and be expressive while doing so. Some of my favorite examples of skill expression are in <a href="https://store.steampowered.com/app/1145360/Hades/" target="_blank" rel="noopener" data-cursor="Visit">Hades</a>, <a href="https://store.steampowered.com/app/504230/Celeste/" target="_blank" rel="noopener" data-cursor="Visit">Celeste</a>, and <a href="https://store.steampowered.com/app/1229490/ULTRAKILL/" target="_blank" rel="noopener" data-cursor="Visit">ULTRAKILL</a>, so it's no surprise that dash was the first core verb I reached for.</p>
+      <p>I also went with 8-directional movement to give players more freedom, unlike games such as <a href="https://subwaysurfers.com/" target="_blank" rel="noopener" data-cursor="Visit">Subway Surfers</a> and <a href="https://www.crossyroad.com/" target="_blank" rel="noopener" data-cursor="Visit">Crossy Road</a>, where movement is more constrained by lanes or paths.</p>
+      <p>For the perspective, we chose a <a href="https://store.steampowered.com/app/219150/Hotline_Miami/" target="_blank" rel="noopener" data-cursor="Visit">Hotline Miami</a>-style 2D top-down view. It worked well with the fast movement and helped us keep the art workload manageable.</p>
+      <p>I programmed the dash myself, and found that allowing directional inputs during a dash lets players curve their trajectories. This worked better for navigating our map than locking dashes to a straight line.</p>` },
+    { type: 'media', kind: 'image', src: 'assets/screenshots/bloody-wasted/01.gif', label: 'Curved dashing' },
+
+    { type: 'section', title: 'Resources' },
+    { type: 'text', html: `
+      <p>I wanted players to make lots of quick, imperfect decisions. Their choices should have some impact on the run, but they shouldn't be too punishing. My approach was to build a small resource management system with three resources.</p>` },
+    { type: 'stats', items: [
+      { value: '20', label: 'Seconds of Time to get home' },
+      { value: '400', label: 'Metres of Distance to cover' },
+      { value: '30', label: 'Units of HP, her strength' },
+    ] },
+    { type: 'text', html: `<p>And two core verbs:</p>` },
     { type: 'keys', items: [
       { key: 'Run', cap: 'Arrows', html: '8 directions.' },
-      { key: 'Dash', cap: 'Space', html: '8 directions. Costs blood, buys distance.' },
-      { key: 'Eat', cap: 'R-Mouse', html: '8 directions. Refills blood, costs time. Hits everyone nearby.' },
+      { key: 'Dash', cap: 'Space', html: 'Costs HP, covers distance quickly.' },
+      { key: 'Drink blood', cap: 'L-Mouse', html: 'Restores HP, costs time. Hits everyone nearby.' },
     ] },
     { type: 'text', html: `
-      <p>Blood also drains on its own, from the drinking. Dash and eat are on space and left mouse button because that's where <a href="https://store.steampowered.com/app/1145360/Hades/" target="_blank" rel="noopener" data-cursor="Visit">Hades</a> puts them.</p>
-      <p>There are soda cans on the map too. You run over one and she drinks it without breaking stride &mdash; the animation is fast enough that it costs no time at all. Every can raises your speed and your dash power for the rest of the run.</p>` },
-    { type: 'media', kind: 'image', src: 'assets/screenshots/bloody-wasted/01.gif', label: 'Dashing and eating' },
+      <p>Since she's almost passed out from drinking, her HP gradually drains throughout the run. This means players have to drink blood occasionally. There's no pacifist route.</p>
+      <p>The interesting part is how these resources interact. Dashing trades HP for distance, while drinking blood trades time for HP. Players have to keep both in mind while trying to get home before sunrise.</p>` },
 
-    { type: 'section', title: 'The loop' },
-    { type: 'steps', items: [
-      { title: 'Dash', html: 'Keep dashing while the blood lasts.' },
-      { title: 'Land near people', html: 'Pick a path with space to dash through and a group at the end of it.' },
-      { title: 'Eat', html: 'Refill, then dash again.' },
-    ] },
+    { type: 'section', title: 'Decisions' },
     { type: 'text', html: `
-      <p>It doesn't always come out clean. Some paths have the space but leave you standing alone, so you walk for a while. Dash until the blood is nearly gone and land near nobody and you lose.</p>` },
+      <p>At any given moment, players have to think about what to do next.</p>
+      <p><strong>Should I dash?</strong> That depends on how much HP I have left and how open the road ahead is. If my HP is too low, I might not have enough strength to reach someone and drink their blood to recover. If there are obstacles ahead, I might dash straight into them and waste the HP.</p>
+      <p><strong>Should I drink blood?</strong> If my HP is low, probably. But if I still have enough, it might be better to dash first, hopefully ending up near someone so I can recover HP and dash again. Drinking blood also works in an area around the player, so the number of people nearby matters.</p>
+      <p>The ideal play would be to keep dashing until HP gets really low, then end up near a person or two, refill HP, and dash again.</p>
+      <p>Of course, things don't always go as planned. She might not end a dash near anyone, or there might not be enough open space to dash safely. Finding the right spaces and positioning yourself near people are also important parts of the game.</p>` },
 
-    { type: 'section', title: 'Discrete and continuous' },
+    { type: 'section', title: 'Progression' },
     { type: 'text', html: `
-      <p>Runners like <strong>Subway Surfers</strong> and <strong>Crossy Road</strong> are discrete twice over: you move in steps, and you fail in steps. One or two mistakes and the run is done.</p>
-      <p>Bloody Wasted is continuous in both. You run and dash freely in 8 directions, and nothing kills you on its own &mdash; a mistake costs a few milliseconds. Make enough of them and the sun catches up.</p>` },
-
-    { type: 'section', title: 'Soda and progression' },
-    { type: 'text', html: `
-      <p>Soda is the one thing in the run that compounds. Blood is spent and refilled over and over, but a can you drink in the first few seconds is still making you faster at the end &mdash; so the longer you survive, the faster you are, provided you kept collecting.</p>
-      <p>Drinking one is free. Eating is the only action that stops you, and I deliberately didn't give soda the same cost: she drinks it mid-run, so picking one up never breaks the pace. The only thing a can costs is the detour to reach it.</p>
-      <p>The cost arrives later, in handling. Speed is the stat you'd ask for and also the one that makes the vampire harder to steer &mdash; by the late run she's quick enough to slide off a line you meant to take and wedge between bushes, which is dead time with the sun coming up. Buying speed early is buying a twitchier character for the rest of the run, and the reward for playing well is a game that's harder to play.</p>
-      <p>I didn't have to script any of that. Because the map generator spreads objects evenly across intervals, cans keep arriving at a steady rate, so a player who takes every detour gets steadily stronger while the sun closes in at its own fixed pace. The difficulty curve falls out of the uniform generation and the timer running against each other &mdash; no scaling, no difficulty tiers.</p>` },
+      <p>Although a run lasts only 20 seconds, we wanted to give players some sense of progression.</p>
+      <p><a href="https://www.josepromera.com/" target="_blank" rel="noopener" data-cursor="Visit">Our programmer</a> came up with collectibles that increase movement speed and dash distance. I liked the idea because the upgrades came with a trade-off: moving faster and dashing farther helps cover more distance, but it also makes steering harder and increases the chance of bumping into obstacles.</p>
+      <p>Since they're collectibles, players have to earn the upgrades and can choose how much they want to pursue them. The prototype worked well, so we went with it.</p>
+      <p>I initially wanted to increase the number of obstacles in each segment as the player got closer to home, making the later parts of the route harder. But once we introduced the collectibles, adding more obstacles risked making things too difficult. Faster movement was already harder to control, so I decided to keep obstacle density uniform throughout the route.</p>
+      <p>To do this, I wrote a spawner that divides the map into segments and distributes a consistent number of objects within each one, with their positions randomized. For example, each 50-metre segment could have the same number of a particular type of obstacle, but in different places.</p>` },
 
     { type: 'section', title: 'Pacing' },
     { type: 'text', html: `
-      <p>Eating is the only action that stops you, so I asked our artist to keep the animation short and snappy.</p>
-      <p>I also programmed the map generation, which places obstacles randomly but spreads them evenly across intervals. Every run is different and there's always something to work with &mdash; space to dash, bushes to avoid, people to eat.</p>` },
+      <p>Pacing was something I thought about from the beginning.</p>
+      <p>Since it's a fast-paced game, I wanted our vampire to feel almost inhumanly fast. She drinks blood from people and opens and drinks soda cans without even stopping.</p>
+      <p>I discussed this with <a href="https://paperclovers.carrd.co/" target="_blank" rel="noopener" data-cursor="Visit">our artist</a>, and we worked on very short animations with just a few frames that play for less than a second. We ended up with two animations that I really liked.</p>
+      <p>I also tuned the object spawner to make sure obstacles wouldn't overwhelm players, while keeping downtime to a minimum throughout the run.</p>` },
 
     { type: 'section', title: 'Feedback' },
     { type: 'text', html: `
-      <p>In Subway Surfers a small mistake puts a cop behind you. We couldn't warn the player in one moment like that, so the warning builds the same way the failure does: as time runs out the sun rises, the world gets brighter, and shadows appear and shorten.</p>
-      <p>I programmed the dash feedback too &mdash; a ghost trail, a bit of chromatic aberration and lens distortion.</p>` },
-    { type: 'media', kind: 'image', src: 'assets/screenshots/bloody-wasted/02.gif', label: 'The sun catching up' },
+      <p>In games like <a href="https://subwaysurfers.com/" target="_blank" rel="noopener" data-cursor="Visit">Subway Surfers</a> and <a href="https://www.crossyroad.com/" target="_blank" rel="noopener" data-cursor="Visit">Crossy Road</a>, players can lose after making a mistake or two. Since mistakes happen in discrete steps, these games can give players warnings, like the cop showing up behind them after a small mistake.</p>
+      <p>In our game, mistakes accumulate more gradually. Bumping into an obstacle doesn't immediately end the run, but it can make getting home before sunrise harder. I wanted players to have some warning that they were approaching failure.</p>
+      <p><a href="https://www.josepromera.com/" target="_blank" rel="noopener" data-cursor="Visit">Our programmer</a> came up with a solution I really liked: an in-game 2D light that gradually grows towards the vampire girl's home. As the sun gets closer, the world gets brighter. When the light reaches her, she dies.</p>
+      <p>I also worked on a simple shadow system using SpriteRenderer and made a dissolve effect for the vampire's death using Shader Graph.</p>` },
+    { type: 'media', kind: 'image', src: 'assets/screenshots/bloody-wasted/02.gif', label: 'The approaching sun and death sequence' },
 
     { type: 'section', title: 'Result' },
-    { type: 'text', html: `<p>It came together well, and it's the most polished jam game I've worked on. A lot of that is thanks to the people below.</p>` },
+    { type: 'text', html: `<p>The jam didn't have a ranking system, and we didn't get many players. Still, it was a game we enjoyed playing ourselves, and I learnt a lot about pacing, feedback, and making fast movement feel good.</p>` },
     { type: 'media', kind: 'image', src: 'assets/screenshots/bloody-wasted/03.gif', label: 'Gameplay gif' },
 
     { type: 'section', title: 'Team' },
