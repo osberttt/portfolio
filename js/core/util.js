@@ -23,7 +23,7 @@ window.App = window.App || {};
     ind.style.transform = `translateX(${target.offsetLeft}px)`;
   }
 
-  // Text colour for a flat background: ink on light accents, paper on dark ones (e.g. Catch's purple)
+  // Text colour for a flat background: ink on light accents, paper on dark ones
   function onColor(hex) {
     const n = parseInt(hex.replace('#', ''), 16);
     const lin = v => { v /= 255; return v <= .04045 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; };
@@ -31,7 +31,22 @@ window.App = window.App || {};
     return L < .3 ? 'var(--paper)' : 'var(--ink)';
   }
 
-  App.util = { $, $$, clamp, lerp, pad, wait, esc, slugify, fmt, br, movePill, onColor };
+  // Row colour ramp: picks up after the featured accents (lime → mint → blue) and carries on
+  // round the wheel, purple → pink → peach → yellow, back toward lime
+  const RAMP = ['#e6c4f5', '#f5c2e7', '#f7bfd0', '#f8bfb5', '#f7cba6', '#f6d9a0', '#f3e598', '#e6f099'];
+
+  // n colours spread evenly along RAMP, so the list runs end to end whatever its length or order
+  function ramp(n) {
+    const rgb = h => [16, 8, 0].map(s => (parseInt(h.slice(1), 16) >> s) & 255);
+    return Array.from({ length: n }, (_, i) => {
+      const t = n < 2 ? 0 : (i / (n - 1)) * (RAMP.length - 1);
+      const k = Math.min(Math.floor(t), RAMP.length - 2);
+      const a = rgb(RAMP[k]), b = rgb(RAMP[k + 1]);
+      return '#' + a.map((v, j) => Math.round(lerp(v, b[j], t - k)).toString(16).padStart(2, '0')).join('');
+    });
+  }
+
+  App.util = { $, $$, clamp, lerp, pad, wait, esc, slugify, fmt, br, movePill, onColor, RAMP, ramp };
 
   App.env = {
     root: document.documentElement,

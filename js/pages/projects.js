@@ -1,12 +1,10 @@
 /* Projects archive: featured rows (link to case study) and accordion rows. */
 (() => {
   'use strict';
-  const { esc, pad, fmt, onColor } = App.util;
+  const { esc, pad, fmt, onColor, ramp } = App.util;
   const { splitTitle, media, footer } = App.tpl;
   const { SITE, UI: T, GAMES, JAMS } = window;
   const C = T.cursor;
-  // Featured rows run lime → green → blue → purple (their game accents); these carry on round the wheel back toward lime
-  const ROW_COLORS = ['#e6c4f5', '#f5c2e7', '#f7bfd0', '#f8bfb5', '#f7cba6', '#f6d9a0', '#f3e598', '#e6f099'];
 
   function featuredRow(j, n) {
     const g = GAMES.find(x => x.slug === j.featured);
@@ -24,16 +22,16 @@
     </li>`;
   }
 
-  function projectRow(p, n, palette = ROW_COLORS, shade = n) {
-    const c = p.color || palette[shade % palette.length];
+  function projectRow(p, n, shade) {
+    const c = p.color || shade;
     return `<li class="row" style="--c:${c};--d:${n % 4}" data-reveal>
       <button class="row-head wipe" aria-expanded="false" data-cursor="${esc(C.expand)}" data-color="${c}">
         <span class="row-num">${pad(n + 1)}</span>
         <span class="row-main">
           <span class="row-title">${esc(p.title)}</span>
-          <span class="row-sub">${esc([p.event, p.length, p.role].filter(Boolean).join(' · '))}</span>
+          <span class="row-sub">${esc([p.event, p.length, p.team, p.role].filter(Boolean).join(' · '))}</span>
         </span>
-        <span class="row-tag">${esc(p.team || '')}</span>
+        <span class="row-tag">${esc(p.genre || '')}</span>
         <span class="row-icon row-icon--plus" aria-hidden="true"></span>
       </button>
       <div class="row-panel"><div class="row-inner"><div class="row-body" data-lb-group>
@@ -49,16 +47,18 @@
     const P = T.projects;
     const total = JAMS.length;
     const featuredCount = JAMS.filter(j => j.featured).length;
+    // Featured rows wear their game accents (lime → mint → blue); the rest share one ramp that
+    // carries on round the wheel, stretched to however many rows there are
+    const shades = ramp(total - featuredCount);
     return `<div class="page page--projects">
       <header class="page-head">
-        <p class="eyebrow">${esc(P.eyebrow)}</p>
-        <h1 class="page-title">${splitTitle(P.title)}<sup>${total}</sup></h1>
+        <h1 class="page-title">${splitTitle(P.title)}</h1>
         <p class="page-lede" data-reveal>${esc(SITE.projectsIntro)}</p>
       </header>
 
       <section class="group" data-group="jam">
         <h2 class="group-title" data-reveal>${esc(P.jamsHeading)} <span class="mono">${esc(fmt(P.entries, { n: JAMS.length }))}</span></h2>
-        <ol class="rows">${JAMS.map((j, n) => j.featured ? featuredRow(j, n) : projectRow(j, n, ROW_COLORS, n - featuredCount)).join('')}</ol>
+        <ol class="rows">${JAMS.map((j, n) => j.featured ? featuredRow(j, n) : projectRow(j, n, shades[n - featuredCount])).join('')}</ol>
       </section>
 
       ${footer()}

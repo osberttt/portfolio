@@ -22,7 +22,7 @@ window.SITE = {
     { label: 'LinkedIn', value: 'in/min-htet-naing-gamedev', url: 'https://www.linkedin.com/in/min-htet-naing-gamedev' },
   ],
 
-  projectsIntro: "Fourteen jams. Three of them have their own page. The rest have a few notes and a link to play them. Videos for those are still on my to-do list.",
+  projectsIntro: "Every game here is free, and every game except Marti is playable in the browser. I took on a range of roles in these projects, such as game designer, programmer, writer and team lead.",
 
   // "How I Work" section on Home, shown after the featured games. \n = line break.
   howIWork: {

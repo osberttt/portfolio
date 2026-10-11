@@ -1,12 +1,11 @@
 /* About: bio, toolbox, what I'm looking for, contact rows. */
 (() => {
   'use strict';
-  const { esc } = App.util;
+  // Same ramp as the Projects rows (App.util.RAMP)
+  const { esc, RAMP: ROW_COLORS } = App.util;
   const { splitTitle, chips, footer, icon } = App.tpl;
   const { SITE, UI: T } = window;
   const C = T.cursor;
-  // Same ramp as the Projects rows (js/pages/projects.js)
-  const ROW_COLORS = ['#e6c4f5', '#f5c2e7', '#f7bfd0', '#f8bfb5', '#f7cba6', '#f6d9a0', '#f3e598', '#e6f099'];
 
   function render() {
     const a = SITE.about;
