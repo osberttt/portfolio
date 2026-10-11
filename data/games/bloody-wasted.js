@@ -45,7 +45,6 @@
     ] },
     { type: 'text', html: `<p>And two core verbs:</p>` },
     { type: 'keys', items: [
-      { key: 'Run', cap: 'Arrows', html: '8 directions.' },
       { key: 'Dash', cap: 'Space', html: 'Costs HP, covers distance quickly.' },
       { key: 'Drink blood', cap: 'L-Mouse', html: 'Restores HP, costs time. Hits everyone nearby.' },
     ] },

@@ -2,7 +2,27 @@ window.JAMS = [
   { featured: 'amy-died-of-700-tacos' },
   { featured: 'ghost-with-shadow' },
   { featured: 'bloody-wasted' },
-  { featured: 'catch-my-favourite-tv-show' },
+  {
+    title: 'Catch My Favourite TV Show',
+    event: 'The Very Serious Juniper Dev Game Jam',
+    length: '1 week',
+    role: 'Game Design, Programming, Writing, Art',
+    team: 'Solo',
+    color: '',
+    thumb: 'assets/covers/catch-my-fav-tv-show.png',
+    link: 'https://osbert.itch.io/catch-my-favorite-tv-show',
+    shots: [
+      { src: 'assets/screenshots/cmfts.png', ratio: '16 / 10' },
+      { src: 'assets/screenshots/catch-my-favourite-tv-show/02.jpg', ratio: '16 / 10' },
+      { src: 'assets/screenshots/catch-my-favourite-tv-show/03.jpg', ratio: '16 / 10' },
+      { src: 'assets/screenshots/catch-my-favourite-tv-show/04.jpg', ratio: '16 / 10' },
+    ],
+    paragraphs: [
+      "A funny little story about spinning to win, made for the jam's Spin to Win theme. It has 7 short scenes and takes about 5 minutes. Every scene gives you 4 options for getting past a small problem, and spinning something keeps turning out to be the answer.",
+      'I did the game design, writing and art. For the programming, I designed the systems with ScriptableObjects and used Claude Code to write the implementation. Here is the <a href="https://github.com/osberttt/catch-my-favourite-tv-show" target="_blank" rel="noopener" data-cursor="Visit">GitHub repo</a>.',
+      "Players called it \"clever\" and \"silly\", said it had \"good pacing\" and \"doesn't outstay its welcome in terms of jokes\". It placed #1,856 out of 3,498 entries overall.",
+    ],
+  },
   {
     title: 'Trouble in Otterville!',
     event: 'GMTK Game Jam 2025',

@@ -175,7 +175,6 @@
   transition: transform .7s var(--spring);
 }
 .gcard:hover .gcard-bignum { transform: rotate(-8deg); }
-.gcard[data-slug="catch-my-favourite-tv-show"]:hover .gcard-bignum { transform: rotate(360deg); }
 /* Ghost with Shadow: a see-through copy of the number slides out from under it, like the shadow unbinding */
 .gcard[data-slug="ghost-with-shadow"] .gcard-bignum { position: relative; isolation: isolate; }
 .gcard[data-slug="ghost-with-shadow"] .gcard-bignum::after {
