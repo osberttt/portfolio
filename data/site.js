@@ -75,7 +75,7 @@ window.SITE = {
     heading: 'On using AI',
     body: [
       // [[g|text]] and [[r|text]] = highlighted words (the page's accent colour; g = AI used, r = no AI, kept for reference)
-      "Since January 2026, I usually use Claude Code or other AI tools to help write [[g|code]], with me only working on the system design: making sure it isn't prone to bugs, it's easy to extend and maintain, and it isn't overengineered.",
+      "Since this year, I usually use Claude Code or other AI tools to help write [[g|code]], with me only working on the system design: making sure it isn't prone to bugs, it's easy to extend and maintain, and it isn't overengineered.",
       "But I don't let AI be involved in the [[r|writing]] and [[r|art]] assets in any of the games I make.",
     ],
   },
