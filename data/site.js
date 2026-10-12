@@ -95,6 +95,6 @@ window.SITE = {
       'I make games in Unity with C#, mostly in game jams, either on my own or with small teams.',
     ],
     tools: ['Unity', 'C#', 'Git', 'Prototyping', 'Agentic coding', 'Procreate'],
-    lookingFor: "I'm looking for a 4-month internship in a game designer role, starting December 2026, for university credits. I'm open to remote work or relocation, and to any kind of opportunity really, so feel free to say hi.",
+    lookingFor: "I'm looking for a 4-month internship in a game designer role, starting January 2027, for university credits. I'm open to remote work or relocation, and to any kind of opportunity really, so feel free to say hi.",
   },
 };

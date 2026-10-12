@@ -46,7 +46,7 @@
     { type: 'section', title: 'Steam release' },
     { type: 'text', html: `
       <p>I'm a solo developer on this project so far (feel free to reach out to collaborate!), and I've been pursuing a bachelor's degree. So I didn't really have the budget or time to commit to a full game release, and it's been on my backlog for a long time.</p>
-      <p>But it's a cool project and I think it has potential, especially since it's my girlfriend's favorite of all the games I've made so far. So I've been working on it in my free time, and it's progressing really well. Now that I have no more classes left for my degree (I only need to do a 4-month internship to graduate, starting this December), I have a lot more free time and I'm hoping to finish the game next year or so.</p>
+      <p>But it's a cool project and I think it has potential, especially since it's my girlfriend's favorite of all the games I've made so far. So I've been working on it in my free time, and it's progressing really well. Now that I have no more classes left for my degree (I only need to do a 4-month internship to graduate, starting in January), I have a lot more free time and I'm hoping to finish the game next year or so.</p>
       <p>Below is a screenshot from the build I have so far. It isn't final though, since I'm working on the art side of the project for now.</p>` },
     { type: 'media', kind: 'image', src: 'assets/screenshots/amy wip.png', ratio: '16 / 10', label: 'Work in progress: the full version' },
   ],
