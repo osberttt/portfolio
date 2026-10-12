@@ -94,25 +94,10 @@
 
   /* ---------- Lane brush ---------- */
 
+  // Clicking the side lanes hands focus back to the page, so the keyboard still scrolls it
   addEventListener('pointerdown', e => {
-    if (!el.frame.contains(e.target) && el.lightbox.hidden) {
-      placeTile(e.clientX, e.clientY);
-      el.scroller.focus({ preventScroll: true });
-    }
+    if (!el.frame.contains(e.target) && el.lightbox.hidden) el.scroller.focus({ preventScroll: true });
   });
-
-  // Click the side lanes to drop a tile, level-editor style
-  function placeTile(x, y) {
-    const cx = Math.floor(x / TILE);
-    const cy = Math.floor((y - state.scroll.parallax) / TILE);
-    const t = document.createElement('i');
-    t.className = 'tile';
-    t.style.left = `${cx * TILE}px`;
-    t.style.top = `${cy * TILE}px`;
-    t.style.background = getComputedStyle(root).getPropertyValue('--accent');
-    t.addEventListener('animationend', () => t.remove());
-    el.layer.appendChild(t);
-  }
 
   /* ---------- Frame loop ---------- */
 

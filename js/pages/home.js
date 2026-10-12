@@ -49,8 +49,12 @@
   }
 
   function render() {
-    const { cap, set } = App.phrases;
-    const marquee = set(window.WORDS.marqueeCount).map(t => `<span class="marquee-item">${esc(cap(t))}</span>`).join('');
+    // Marquee: every genre covered in the projects, once each, in Projects-page order
+    // (featured games use their third tag, jam rows their `genre`)
+    const genres = JAMS.map(j => j.featured ? (GAMES.find(g => g.slug === j.featured) || { tags: [] }).tags[2] : j.genre).filter(Boolean);
+    const seen = new Set();
+    const marquee = genres.filter(t => !seen.has(t.toLowerCase()) && seen.add(t.toLowerCase()))
+      .map(t => `<span class="marquee-item">${esc(t)}</span>`).join('');
     const how = SITE.howIWork;
     const ai = SITE.aiDisclosure;
     const H = T.home;

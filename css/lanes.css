@@ -54,22 +54,6 @@
   white-space: nowrap;
 }
 
-.tile {
-  position: absolute;
-  width: var(--tile);
-  height: var(--tile);
-  border-radius: 6px;
-  pointer-events: none;
-  animation: tile 3.6s var(--out) forwards;
-}
-@keyframes tile {
-  0%   { transform: scale(.2) rotate(-20deg); }
-  10%  { transform: scale(1.1) rotate(4deg); }
-  18%  { transform: scale(1) rotate(0); }
-  80%  { transform: scale(1); opacity: 1; }
-  100% { transform: scale(0) rotate(45deg); opacity: 0; }
-}
-
 /* HUD readouts running vertically beside the frame */
 .hud {
   position: fixed;

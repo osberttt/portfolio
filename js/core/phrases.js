@@ -1,7 +1,7 @@
 /* Phrase generator: "adjective noun" pairs from data/words.js, only combining words that fit.
    Adjectives and nouns each come out of a shuffle bag: every word is used once before any repeats, and after a
-   refill the most recently used words go to the back, so you don't see the same word again soon. The bags are
-   shared by the marquee and the "personality" hover, and last for the whole visit. */
+   refill the most recently used words go to the back, so you don't see the same word again soon. The bags
+   feed the "personality" hover and last for the whole visit. */
 (() => {
   'use strict';
   const { WORDS } = window;
@@ -62,20 +62,5 @@
   }
   const pair = avoid => parts(avoid).join(' ');
 
-  // n pairs that share no adjective and no noun, so the marquee never reads "odd ideas, weird ideas".
-  function set(n) {
-    const adjs = new Set(), nouns = new Set();
-    const out = [];
-    while (out.length < n) {
-      const [adj, noun] = parts('', adjs, nouns);
-      if (adjs.has(adj) || nouns.has(noun)) break;   // word lists too small to keep going without repeats
-      adjs.add(adj); nouns.add(noun);
-      out.push(`${adj} ${noun}`);
-    }
-    return out;
-  }
-
-  const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
-
-  App.phrases = { pair, set, cap };
+  App.phrases = { pair };
 })();
