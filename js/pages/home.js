@@ -49,12 +49,12 @@
   }
 
   function render() {
-    // Marquee: every genre covered in the projects, once each, in Projects-page order
-    // (featured games use their third tag, jam rows their `genre`)
-    const genres = JAMS.map(j => j.featured ? (GAMES.find(g => g.slug === j.featured) || { tags: [] }).tags[2] : j.genre).filter(Boolean);
-    const seen = new Set();
-    const marquee = genres.filter(t => !seen.has(t.toLowerCase()) && seen.add(t.toLowerCase()))
-      .map(t => `<span class="marquee-item">${esc(t)}</span>`).join('');
+    // Marquee: genre tags in a fresh order each visit, each one tilted and nudged a little,
+    // and about one in four filled with the accent, like stickers slapped on by hand
+    const rnd = (a, b) => a + Math.random() * (b - a);
+    const tags = [...SITE.marqueeTags];
+    for (let i = tags.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [tags[i], tags[j]] = [tags[j], tags[i]]; }
+    const marquee = tags.map(t => `<span class="marquee-item"><span class="marquee-tag${Math.random() < .25 ? ' is-filled' : ''}" style="--r:${rnd(-4, 4).toFixed(1)}deg;--y:${rnd(-3, 3).toFixed(1)}px">${esc(t)}</span></span>`).join('');
     const how = SITE.howIWork;
     const ai = SITE.aiDisclosure;
     const H = T.home;

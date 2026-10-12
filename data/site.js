@@ -22,6 +22,11 @@ window.SITE = {
     { label: 'LinkedIn', value: 'in/min-htet-naing-gamedev', url: 'https://www.linkedin.com/in/min-htet-naing-gamedev' },
   ],
 
+  // Home marquee: the project genres broken into itch.io-style tags. Shuffled on each visit to Home.
+  // Written by hand from the genres in data/jams.js and the featured games' tags, so update both together.
+  marqueeTags: ['narrative', 'text-based', 'puzzle', 'platformer', '2D', 'top-down', 'bullet hell',
+    'roguelite', 'metroidvania', 'shooter', 'cozy', 'simulation', 'boss fight', 'match-3', 'precision platformer'],
+
   projectsIntro: "Every game here is free, and every game except Marti is playable in the browser. I took on a range of roles in these projects, such as game designer, programmer, writer and team lead.",
 
   // "How I Work" section on Home, shown after the featured games. \n = line break.

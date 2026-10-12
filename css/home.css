@@ -110,6 +110,14 @@
   letter-spacing: -.02em;
 }
 .marquee-item::after { content: "✱"; color: var(--accent); transition: color .6s; }
+/* Each genre is a tag: outlined pill, tilted and nudged by a random amount (set inline in js/pages/home.js) */
+.marquee-tag {
+  padding: 2px 16px 5px;
+  border: 2px solid currentColor;
+  border-radius: 999px;
+  transform: translateY(var(--y, 0)) rotate(var(--r, 0));
+}
+.marquee-tag.is-filled { background: var(--accent); border-color: var(--accent); color: var(--ink); transition: background-color .6s, border-color .6s; }
 
 .section-head {
   display: flex;
