@@ -59,7 +59,7 @@ window.SITE = {
         body: "I identify the cause of each problem, make the smallest change that addresses it, and then re-test against the design goal to make sure the fix didn't create a new problem somewhere else.",
         eg: {
           game: 'ghost-with-shadow',
-          text: "I turned the air gravity down from 3 to 2 and the fall multiplier from 1.5 to 1. It's floatier than Celeste, but it gives you enough time for the moves.",
+          text: "I turned down the on-air gravity scale from 3 to 2 and the fall multiplier from 1.5 to 1. It's floatier than Celeste, but it gives you enough time for the moves.",
         },
       },
       {
@@ -75,8 +75,8 @@ window.SITE = {
     heading: 'On using AI',
     body: [
       // [[g|text]] and [[r|text]] = highlighted words (the page's accent colour; g = AI used, r = no AI, kept for reference)
-      "Since this year, I usually use Claude Code or other AI tools to help write [[g|code]], with me only working on the system design: making sure it isn't prone to bugs, it's easy to extend and maintain, and it isn't overengineered.",
-      "But I don't let AI be involved in the [[r|writing]] and [[r|art]] assets in all the games I make.",
+      "Since January 2026, I usually use Claude Code or other AI tools to help write [[g|code]], with me only working on the system design: making sure it isn't prone to bugs, it's easy to extend and maintain, and it isn't overengineered.",
+      "But I don't let AI be involved in the [[r|writing]] and [[r|art]] assets in any of the games I make.",
     ],
   },
 

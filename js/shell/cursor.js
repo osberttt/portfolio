@@ -1,16 +1,15 @@
 /* Cursor (coloured arrow + hand), hover status in the folder tab, level-editor lane brush,
-   floating project preview, light-source frame shadow, and the per-frame render loop. */
+   light-source frame shadow, and the per-frame render loop. */
 (() => {
   'use strict';
-  const { esc, lerp, clamp } = App.util;
+  const { lerp } = App.util;
   const { FINE, root } = App.env;
   const { el, state } = App;
-  const { TUNING, UI: T } = window;
+  const { TUNING } = window;
   const { mouse } = state;
   const { TILE } = App.shell.scroll;
 
   const shadow = { x: 6, y: 6, lx: 0, ly: 0 };
-  const pv = { x: 0, y: 0, s: 0, show: false, target: null };
   let lastCell = '';
   let inLane = false;
 
@@ -78,10 +77,6 @@
     if (colored) root.style.setProperty('--shadow-c', colored.dataset.color);
     else root.style.removeProperty('--shadow-c');
     setCursorColor(colored ? colored.dataset.color : '');
-
-    // Floating preview for project rows
-    const p = FINE ? t.closest('[data-preview]') : null;
-    if (p && !p.closest('.row.open')) showPreview(p); else hidePreview();
   }
 
   function refreshCursor() {
@@ -119,25 +114,6 @@
     el.layer.appendChild(t);
   }
 
-  /* ---------- Hover preview ---------- */
-
-  function showPreview(p) {
-    pv.show = true;
-    if (pv.target === p) return;
-    pv.target = p;
-    if (pv.s < 0.05) { pv.x = mouse.x; pv.y = mouse.y; }
-    el.preview.style.setProperty('--c', p.dataset.color || 'var(--accent)');
-    const src = p.dataset.previewSrc;
-    el.preview.innerHTML = src
-      ? `<img src="${esc(src)}" alt="">`
-      : `<span class="preview-k">${esc(T.projects.preview)}</span><span class="preview-t">${esc(p.dataset.preview)}</span>`;
-  }
-
-  function hidePreview() {
-    pv.show = false;
-    pv.target = null;
-  }
-
   /* ---------- Frame loop ---------- */
 
   function loop() {
@@ -170,21 +146,10 @@
       root.style.setProperty('--sy', shadow.y.toFixed(2));
     }
 
-    // Hover preview
-    if (pv.show || pv.s > 0.01) {
-      const px = pv.x;
-      pv.x = lerp(pv.x, mouse.x, 0.16);
-      pv.y = lerp(pv.y, mouse.y, 0.16);
-      pv.s = lerp(pv.s, pv.show ? 1 : 0, 0.2);
-      const rot = clamp((pv.x - px) * 1.2, -14, 14);
-      el.preview.style.opacity = pv.s.toFixed(3);
-      el.preview.style.transform = `translate3d(${pv.x.toFixed(1)}px, ${pv.y.toFixed(1)}px, 0) translate(36px, -50%) rotate(${rot.toFixed(2)}deg) scale(${(0.6 + pv.s * 0.4).toFixed(3)})`;
-    }
-
     state.tickers.forEach(f => f());
     requestAnimationFrame(loop);
   }
   requestAnimationFrame(loop);
 
-  App.shell.cursor = { setCursorColor, setStatus, refreshCursor, hidePreview };
+  App.shell.cursor = { setCursorColor, setStatus, refreshCursor };
 })();

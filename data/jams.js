@@ -10,7 +10,6 @@ window.JAMS = [
     team: 'Solo',
     genre: 'Narrative',
     color: '',
-    thumb: 'assets/covers/catch-my-fav-tv-show.png',
     link: 'https://osbert.itch.io/catch-my-favorite-tv-show',
     shots: [
       { src: 'assets/screenshots/cmfts.png', ratio: '16 / 10' },
@@ -32,7 +31,6 @@ window.JAMS = [
     team: 'Team of 4',
     genre: 'Puzzle platformer',
     color: '',
-    thumb: 'assets/covers/trouble-in-otterville.png',
     link: 'https://osbert.itch.io/trouble-in-otterville',
     shots: [
       { src: 'assets/screenshots/trouble-in-otterville/01.jpg' },
@@ -54,7 +52,6 @@ window.JAMS = [
     team: 'Team of 7',
     genre: 'Bullet hell',
     color: '',
-    thumb: 'assets/covers/777.png',
     link: 'https://osbert.itch.io/777',
     shots: [
       { src: 'assets/screenshots/777/01.jpg' },
@@ -75,7 +72,6 @@ window.JAMS = [
     team: 'Solo',
     genre: 'Roguelite metroidvania',
     color: '',
-    thumb: 'assets/covers/soul-collector.png',
     link: 'https://osbert.itch.io/soul-collector',
     shots: [
       { src: 'assets/screenshots/soul-collector/01.jpg' },
@@ -91,12 +87,11 @@ window.JAMS = [
   {
     title: 'A Strike of Ice and Fire',
     event: 'SoloDevelopment Jam #6: Winter Jam',
-    length: '',
+    length: '3 days',
     role: 'Design, Programming, Art',
     team: 'Solo',
     genre: 'Shooter',
     color: '',
-    thumb: 'assets/covers/a-strike-of-ice-and-fire.png',
     link: 'https://osbert.itch.io/a-strike-of-ice-and-fire',
     shots: [
       { src: 'assets/screenshots/a-strike-of-ice-and-fire/01.png' },
@@ -111,12 +106,11 @@ window.JAMS = [
   {
     title: 'Get Power',
     event: 'Kenney Jam 2025',
-    length: '',
+    length: '2 days',
     role: 'Design & Programming',
     team: 'Solo',
     genre: 'Puzzle',
     color: '',
-    thumb: 'assets/covers/get-power.png',
     link: 'https://osbert.itch.io/get-power',
     shots: [
       { src: 'assets/screenshots/get-power/01.jpg' },
@@ -133,12 +127,11 @@ window.JAMS = [
   {
     title: 'An Autumn Sweep',
     event: 'Cozy Fall Jam 2024',
-    length: '',
+    length: '3 days',
     role: 'Design, Programming, Art',
     team: 'Team of 2',
     genre: 'Cozy simulation',
     color: '',
-    thumb: 'assets/covers/an-autumn-sweep.png',
     link: 'https://osbert.itch.io/an-autumn-sweep',
     shots: [
       { src: 'assets/screenshots/an-autumn-sweep/02.png' },
@@ -154,12 +147,11 @@ window.JAMS = [
   {
     title: 'Marti',
     event: 'Solo Dev Game Jam #4',
-    length: '',
+    length: '3 days',
     role: 'Design, Programming, Level Design',
     team: 'Solo',
     genre: 'Platformer',
     color: '',
-    thumb: 'assets/covers/marti.png',
     link: 'https://osbert.itch.io/marti',
     shots: [
       { src: 'assets/screenshots/marti/01.jpg' },
@@ -175,12 +167,11 @@ window.JAMS = [
   {
     title: 'Dodge or Die',
     event: 'ScoreSpace Jam #35',
-    length: '',
+    length: '3 days',
     role: 'Design, Programming, Art',
     team: 'Solo',
     genre: 'Puzzle',
     color: '',
-    thumb: 'assets/covers/dodge-or-die.png',
     link: 'https://osbert.itch.io/dodge-or-die',
     shots: [
       { src: 'assets/screenshots/dodge-or-die/01.gif' },
@@ -195,12 +186,11 @@ window.JAMS = [
   {
     title: 'Doomsday Kickoff',
     event: 'ScoreSpace Jam #32',
-    length: '',
+    length: '3 days',
     role: 'Game Design, Level Design',
     team: 'Team of 4',
     genre: '2D shooter',
     color: '',
-    thumb: 'assets/covers/doomsday-kickoff.png',
     link: 'https://osbert.itch.io/doomsday-kickoff',
     shots: [
       { src: 'assets/screenshots/doomsday-kickoff/01.png' },
@@ -215,12 +205,11 @@ window.JAMS = [
   {
     title: 'Dungeon Demise',
     event: 'Major Jam 7: Wild',
-    length: '7 days',
+    length: '1 week',
     role: 'Programming',
     team: 'Team of 4',
     genre: 'Dungeon crawler',
     color: '',
-    thumb: 'assets/covers/dungeon-demise.png',
     link: 'https://tavi006.itch.io/dungeon-demise',
     video: { kind: 'youtube', src: 'SiBiHeEZpZE', label: 'Trailer' },
     paragraphs: [

@@ -27,14 +27,12 @@ window.UI = {
   },
 
   projects: {
-    eyebrow: '[ Archive ]',
     title: 'Projects',
     jamsHeading: 'Game jams',
     entries: '{n} entries',
     featured: 'Featured',
     videoFallback: 'Gameplay video',
     play: 'Play on itch.io ↗',
-    preview: '▶ Preview',
   },
 
   about: {

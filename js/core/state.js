@@ -19,7 +19,6 @@
     hudR: $('#hud-r'),
     tabText: $('#frame-tab-text'),
     frameTab: $('.frame-tab'),
-    preview: $('#preview'),
     lightbox: $('#lightbox'),
     navBack: $('#nav-back'),
     sbar: $('#sbar'),

@@ -138,7 +138,6 @@
     root.style.removeProperty('--shadow-c');
     setTabs(r);
     setChrome(r);
-    App.shell.cursor.hidePreview();
     el.shutterLabel.textContent = r.game ? r.game.title : T.pages[r.name];
 
     if (!first && !REDUCED) await runShutter(true);
