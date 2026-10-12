@@ -49,12 +49,10 @@
   }
 
   function render() {
-    // Marquee: genre tags in a fresh order each visit, each one tilted and nudged a little,
-    // and about one in four filled with the accent, like stickers slapped on by hand
-    const rnd = (a, b) => a + Math.random() * (b - a);
+    // Marquee: genre tags in a fresh order each visit to Home
     const tags = [...SITE.marqueeTags];
     for (let i = tags.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [tags[i], tags[j]] = [tags[j], tags[i]]; }
-    const marquee = tags.map(t => `<span class="marquee-item"><span class="marquee-tag${Math.random() < .25 ? ' is-filled' : ''}" style="--r:${rnd(-4, 4).toFixed(1)}deg;--y:${rnd(-3, 3).toFixed(1)}px">${esc(t)}</span></span>`).join('');
+    const marquee = tags.map(t => `<span class="marquee-item">${esc(t)}</span>`).join('');
     const how = SITE.howIWork;
     const ai = SITE.aiDisclosure;
     const H = T.home;
