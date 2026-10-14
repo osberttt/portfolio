@@ -1,3 +1,5 @@
 # Private working notes: kept locally, never published
 *.md
 drafts/
+# Job hunt and working notes: resume, application tracker, studio research
+docs/
