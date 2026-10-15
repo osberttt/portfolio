@@ -18,7 +18,7 @@ window.JAMS = [
       { src: 'assets/screenshots/catch-my-favourite-tv-show/04.jpg', ratio: '16 / 10' },
     ],
     paragraphs: [
-      "A silly little game about a guy going home from work to watch his favourite TV show, played as a TV quiz show like 'Who Wants to Be a Billionaire?'",
+      "A silly little game about a guy going home from work to watch his favourite TV show, played as a TV quiz show like 'Who Wants to Be a Millionaire?'",
       'I did the game design, writing and art. For the programming, I designed the systems with ScriptableObjects and used Claude Code to write the implementation. Here is the <a href="https://github.com/osberttt/catch-my-favourite-tv-show" target="_blank" rel="noopener" data-cursor="Visit">GitHub repo</a> if you\'re interested.',
       "It's a complete story with 7 quizzes, and players called it \"clever\" and \"silly\", said it had \"good pacing\" and \"doesn't outstay its welcome in terms of jokes\".",
     ],
