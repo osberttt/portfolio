@@ -40,8 +40,8 @@ window.JAMS = [
     ],
     paragraphs: [
       'A puzzle platformer where an otter dies over and over again just to get to work. The way to work is full of things that can kill him, and every level ends at a bus stop, with his job still many stops away.',
-      'When you die, your corpse stays behind for the next run and becomes part of the puzzle. You can stand on it or hide behind it. Later you can also move the things that kill you, like the chimney, the fountain and the windmill, so where you die also becomes something you plan.',
-      'I designed 3 levels and wrote a dialogue scene. It placed #430 of 9,378 for narrative.',
+      'When you die, your corpse stays behind for the next run and becomes part of the puzzle. You can stand on it or hide behind it. You can also move the things that kill you, like the chimney, the fountain and the windmill, so where you die also becomes something you plan.',
+      'I designed 3 levels and wrote 4 dialogue scenes. It placed #430 of 9,378 for narrative.',
     ],
   },
   {
@@ -140,7 +140,7 @@ window.JAMS = [
     ],
     paragraphs: [
       'A cozy sweeping game where you are the wind, and you have to sweep the leaves off a village.',
-      'I did the design, programming and art. The game supports keyboard and mouse controls, and has 3 difficulty levels.',
+      'I did the design, programming and art, and colloborated with a composer. The game supports keyboard and mouse controls, and has 3 difficulty levels.',
       'It placed #22 out of 83 entries.',
     ],
   },
@@ -161,7 +161,7 @@ window.JAMS = [
     ],
     paragraphs: [
       'A two-button platformer with no arrow inputs. F changes direction, J jumps, and pressing both against a wall does a wall jump.',
-      'I did the game design, programming and level design.',
+      'I did the game design, level design, programming and art.',
     ],
   },
   {
@@ -180,7 +180,7 @@ window.JAMS = [
     ],
     paragraphs: [
       'A grid-based puzzle game where you use dice to move around. Avoid the triangle enemies and capture the circles for points.',
-      'I did the game design, programming and art.',
+      'I did the game design, programming and art, and collaborated with a sound designer.',
     ],
   },
   {

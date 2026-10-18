@@ -64,7 +64,7 @@ window.SITE = {
         body: "I identify the cause of each problem, make the smallest change that addresses it, and then re-test against the design goal to make sure the fix didn't create a new problem somewhere else.",
         eg: {
           game: 'ghost-with-shadow',
-          text: "I turned down the on-air gravity scale from 3 to 2 and the fall multiplier from 1.5 to 1. It's floatier than Celeste, but it gives you enough time for the moves.",
+          text: "I turned down the on-air gravity scale from 3 to 2 and the fall multiplier from 1.5 to 1. It's floatier than games like Celeste, but it gives you enough time for the moves.",
         },
       },
       {

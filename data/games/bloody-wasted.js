@@ -43,7 +43,7 @@
       { value: '400', label: 'Metres of Distance to cover' },
       { value: '30', label: 'Units of HP, her strength' },
     ] },
-    { type: 'text', html: `<p>And two core verbs:</p>` },
+    { type: 'text', html: `<p>And two core buttons laid out like Hades on PC:</p>` },
     { type: 'keys', items: [
       { key: 'Dash', cap: 'Space', html: 'Covers distance quickly, costs HP.' },
       { key: 'Drink blood', cap: 'L-Mouse', html: 'Restores HP, costs time.' },
