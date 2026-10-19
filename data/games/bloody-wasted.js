@@ -91,7 +91,7 @@
       { role: 'Programming', name: 'Josep Romera', url: 'https://www.josepromera.com', color: '#b5d3f8' },
       { role: 'Art', name: 'Blossom', url: 'https://paperclovers.carrd.co/', color: '#ddcbee' },
       { role: 'Music', name: 'JuanMaP', url: 'https://www.youtube.com/@juanmanuelparraramirez', color: '#bba9ee' },
-      { role: 'Sound design', name: 'Dangalletti', color: '#f5cfa4' },
+      { role: 'Sound design', name: 'Dangalletti', url: 'https://www.dangallettiaudio.com/', color: '#f5cfa4' },
     ] },
   ],
 }
